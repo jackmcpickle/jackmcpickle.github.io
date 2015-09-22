@@ -1,0 +1,20 @@
+{
+  "name": "ben_darsow",
+  "description": "Ben darsow single page site",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.com/jackmcpickle/bendarsow.git"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-compass": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-livereload": "~0.1.3",
+    "grunt-contrib-sass": "~0.7.2"
+  }
+}
