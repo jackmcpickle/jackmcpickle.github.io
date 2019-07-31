@@ -1,7 +1,6 @@
 /* This injects Tailwind's base styles and any base styles registered by plugins. */
 @tailwind base;
 
-
 p {
   margin: 1rem 0;
 }
@@ -9,6 +8,16 @@ p {
 .container {
   @apply my-0 mx-auto;
   max-width: theme('screens.lg');
+}
+
+.icon {
+  @apply w-6 h-6 inline-block text-white mr-2;
+}
+
+.icon svg { fill: white; }
+
+.link {
+  @apply inline-block align-middle leading-none;
 }
 
 .portrait {
@@ -64,7 +73,6 @@ p {
     @apply w-auto;
   }
 }
-
 
 /* This injects Tailwind's component classes and any component classesregistered by plugins. */
 @tailwind components;
