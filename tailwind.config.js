@@ -18,4 +18,7 @@ module.exports = {
     float: false,
     container: false,
   },
+  purge: [
+    './public/**/*.html'
+  ],
 };
