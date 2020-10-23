@@ -26,6 +26,6 @@
   },
   "dependencies": {
     "postcss-import": "13.0.0",
-    "tailwindcss": "1.9.5"
+    "tailwindcss": "1.9.6"
   }
 }
