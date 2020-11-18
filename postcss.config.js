@@ -1,23 +1,47 @@
+const tailwindcss = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const postcssPresetEnv = require('postcss-preset-env');
+const postcssImport = require('postcss-import');
 const purgecss = require('@fullhuman/postcss-purgecss')({
-    // Specify the paths to all of the template files in your project
     content: [
-        './public/**/*.html',
-        './public/**/*.vue',
-        './public/**/*.jsx',
-        // etc.
+        'public/index.html',
+        'assets/css/*.css',
     ],
+    safelist: [],
 
-    // Include any special characters you're using in this regular expression
-    defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+    // This is the function used to extract class names from your templates
+    defaultExtractor: content => {
+      // Capture as liberally as possible, including things like `h-(screen-1.5)`
+      const broadMatches = content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []
+
+      // Capture classes within other delimiters like .block(class="w-1/2") in Pug
+      const innerMatches = content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || []
+
+      return broadMatches.concat(innerMatches)
+    }
 });
 
-module.exports = {
-    plugins: [
-        require('postcss-import'),
-        require('tailwindcss'),
-        ,
-        ...(process.env.NODE_ENV === 'production'
-            ? [require('postcss-preset-env'), require('autoprefixer'), require('cssnano'), purgecss]
-            : []),
-    ],
+const prodMode = process.env.NODE_ENV === 'production';
+
+module.exports = (ctx) => {
+  const plugins = [
+    postcssPresetEnv,
+    postcssImport({
+      path: ['node_modules', 'public/app/themes/brd/assets/css'],
+    }),
+    tailwindcss,
+    autoprefixer
+  ];
+
+  if (prodMode) {
+    plugins.push(
+        cssnano,
+        purgecss,
+    );
+  }
+
+  return {
+      plugins
+  };
 };

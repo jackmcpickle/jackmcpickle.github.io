@@ -7,9 +7,9 @@
   },
   "version": "3.0.0",
   "scripts": {
-    "start": "npm-run-all --parallel server css",
-    "server": "browser-sync start --server public --files 'public/**/*.*'",
-    "css": "postcss -c postcss.config.js -o public/css/app.css assets/css/app.css --watch",
+    "start": "concurrently -n w: npm:start:*",
+    "start:watch": "browser-sync start --server public --files 'public/**/*.*'",
+    "start:css": "postcss -c postcss.config.js -o public/css/app.css assets/css/app.css --watch",
     "build": "NODE_ENV=production postcss -c postcss.config.js -o public/css/app.css assets/css/app.css"
   },
   "browserslist": [
@@ -25,6 +25,7 @@
     "postcss-preset-env": "6.7.0"
   },
   "dependencies": {
+    "concurrently": "^5.3.0",
     "postcss-import": "13.0.0",
     "tailwindcss": "1.9.6"
   }
