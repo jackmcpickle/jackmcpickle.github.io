@@ -36,7 +36,7 @@ p {
 
 @screen md {
   .project-item {
-    @apply flex-no-wrap;
+    @apply flex-nowrap;
   }
 }
 
