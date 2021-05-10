@@ -20,7 +20,7 @@
     "browser-sync": "2.26.14",
     "cssnano": "5.0.2",
     "concurrently": "6.1.0",
-    "postcss-import": "14.0.1",
+    "postcss-import": "14.0.2",
     "postcss": "8.2.14",
     "postcss-cli": "8.3.1",
     "postcss-preset-env": "6.7.0"
