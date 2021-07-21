@@ -21,7 +21,7 @@
     "cssnano": "5.0.7",
     "concurrently": "6.2.0",
     "postcss-import": "14.0.2",
-    "postcss": "8.3.5",
+    "postcss": "8.3.6",
     "postcss-cli": "8.3.1",
     "postcss-preset-env": "6.7.0"
   },
