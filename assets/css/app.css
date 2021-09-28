@@ -6,32 +6,32 @@ p {
 }
 
 .container {
-  @apply my-0 mx-auto;
-  max-width: theme('screens.lg');
+  @apply mx-auto my-0;
+  max-width: theme('screens.md');
 }
 
 .icon {
-  @apply w-6 h-6 inline-block text-white mr-2;
+  @apply inline-block w-6 h-6 mr-2 text-white;
 }
 
 .icon svg { fill: white; }
 
 .link {
-  @apply inline-block align-middle leading-none;
+  @apply inline-block leading-none align-middle;
 }
 
 .portrait {
   @apply inline-block w-full h-0 bg-cover;
-  background-image: url('../images/jack-profile.jpg');
+  background-image: url('../images/profile-pic-jack.jpg');
   padding-bottom: 100%;
 }
 
 .project-head {
-  @apply flex w-full font-bold border-gray-200 border-b border-solid;
+  @apply flex w-full font-bold border-b border-gray-200 border-solid;
 }
 
 .project-item {
-  @apply flex w-full border-gray-200 border-b border-solid py-2 flex-wrap;
+  @apply flex flex-wrap w-full py-2 border-b border-gray-200 border-solid;
 }
 
 @screen md {
@@ -43,11 +43,11 @@ p {
 .project-item:focus,
 .project-item:focus-within,
 .project-item:hover {
-  @apply bg-gray-200;
+  @apply bg-gray-100;
 }
 
 .project-link {
-  @apply w-2/5 px-2 flex-grow;
+  @apply flex-grow w-2/5 px-2;
 }
 
 @screen md {
@@ -60,12 +60,16 @@ p {
   @apply outline-none;
 }
 
-.project-label {
-  @apply text-white bg-green-600 px-2;
+.project-type {
+  @apply flex-grow w-full px-2 text-right;
 }
 
-.project-type {
-  @apply flex-grow text-right px-2 text-gray-500 text-sm w-full;
+.project-tag {
+  @apply inline-flex px-2 text-xs font-semibold leading-5 text-gray-800 bg-gray-200 rounded-full;
+}
+
+.name-svg-fill {
+  fill: white;
 }
 
 @screen md {

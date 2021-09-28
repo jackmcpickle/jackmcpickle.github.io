@@ -1,6 +1,11 @@
-const { colors , backgroundColor } = require('tailwindcss/defaultConfig');
-
 module.exports = {
+  purge: {
+    content: [
+      'public/index.html',
+      'assets/css/*.css',
+    ],
+  },
+  jit: true,
   theme: {
     extend: {},
     screens: {
@@ -18,5 +23,4 @@ module.exports = {
     float: false,
     container: false,
   },
-  purge: false
 };
