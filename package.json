@@ -24,6 +24,6 @@
     "postcss-preset-env": "7.0.0"
   },
   "dependencies": {
-    "tailwindcss": "2.2.16"
+    "tailwindcss": "2.2.19"
   }
 }
