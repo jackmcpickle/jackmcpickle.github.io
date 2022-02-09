@@ -10,7 +10,8 @@
     "start": "concurrently -n w: npm:start:*",
     "start:watch": "browser-sync start --server public --files 'public/**/*.*'",
     "start:css": "postcss -c postcss.config.js -o public/css/app.css assets/css/app.css --watch",
-    "build": "NODE_ENV=production postcss -c postcss.config.js -o public/css/app.css assets/css/app.css"
+    "build": "NODE_ENV=production postcss -c postcss.config.js -o public/css/app.css assets/css/app.css",
+    "test": "npm run build"
   },
   "browserslist": [
     ">= 0.25% in AU"
