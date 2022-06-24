@@ -22,7 +22,7 @@
     "cssnano": "5.1.12",
     "postcss": "8.4.14",
     "postcss-cli": "9.1.0",
-    "postcss-preset-env": "7.7.1"
+    "postcss-preset-env": "7.7.2"
   },
   "dependencies": {
     "tailwindcss": "3.1.4"
