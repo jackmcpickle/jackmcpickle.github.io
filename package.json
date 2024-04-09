@@ -1,30 +1,30 @@
 {
-  "name": "jackmcpickle.github.io",
-  "description": "Jack McNicol personal website",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jackmcpickle/jackmcpickle.github.io/"
-  },
-  "version": "3.0.0",
-  "scripts": {
-    "start": "concurrently -n w: npm:start:*",
-    "start:watch": "browser-sync start --server public --files 'public/**/*.*'",
-    "start:css": "postcss -c postcss.config.js -o public/css/app.css assets/css/app.css --watch",
-    "build": "NODE_ENV=production postcss -c postcss.config.js -o public/css/app.css assets/css/app.css",
-    "test": "npm run build"
-  },
-  "browserslist": [
-    ">= 0.25% in AU"
-  ],
-  "devDependencies": {
-    "browser-sync": "2.29.3",
-    "concurrently": "8.2.0",
-    "cssnano": "6.0.1",
-    "postcss": "8.4.27",
-    "postcss-cli": "10.1.0",
-    "postcss-preset-env": "9.1.1"
-  },
-  "dependencies": {
-    "tailwindcss": "3.3.3"
-  }
+    "name": "jackmcpickle.github.io",
+    "description": "Jack McNicol personal website",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jackmcpickle/jackmcpickle.github.io/"
+    },
+    "version": "3.0.0",
+    "scripts": {
+        "dev": "concurrently -n w: npm:dev:*",
+        "dev:watch": "browser-sync start --server public --files 'public/**/*.*'",
+        "dev:css": "postcss -c postcss.config.js -o public/css/app.css assets/css/app.css --watch",
+        "build": "NODE_ENV=production postcss -c postcss.config.js -o public/css/app.css assets/css/app.css",
+        "test": "npm run build"
+    },
+    "browserslist": [
+        ">= 0.05% in AU"
+    ],
+    "devDependencies": {
+        "browser-sync": "3.0.2",
+        "concurrently": "8.2.2",
+        "cssnano": "6.1.2",
+        "postcss": "8.4.38",
+        "postcss-cli": "11.0.0",
+        "postcss-preset-env": "9.5.4"
+    },
+    "dependencies": {
+        "tailwindcss": "3.4.3"
+    }
 }
