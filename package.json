@@ -19,7 +19,7 @@
     "devDependencies": {
         "browser-sync": "3.0.2",
         "concurrently": "8.2.2",
-        "cssnano": "7.0.4",
+        "cssnano": "7.0.5",
         "postcss": "8.4.41",
         "postcss-cli": "11.0.0",
         "postcss-preset-env": "10.0.0"
