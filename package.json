@@ -17,7 +17,7 @@
         ">= 0.05% in AU"
     ],
     "devDependencies": {
-        "browser-sync": "3.0.3",
+        "browser-sync": "3.0.4",
         "concurrently": "9.1.2",
         "cssnano": "7.0.6",
         "postcss": "8.5.3",
