@@ -28,8 +28,8 @@ importers:
         specifier: 11.0.1
         version: 11.0.1(jiti@1.21.6)(postcss@8.5.4)
       postcss-preset-env:
-        specifier: 10.2.1
-        version: 10.2.1(postcss@8.5.4)
+        specifier: 10.2.2
+        version: 10.2.2(postcss@8.5.4)
 
 packages:
 
@@ -151,8 +151,8 @@ packages:
     peerDependencies:
       postcss: ^8.4
 
-  '@csstools/postcss-is-pseudo-class@5.0.1':
-    resolution: {integrity: sha512-JLp3POui4S1auhDR0n8wHd/zTOWmMsmK3nQd3hhL6FhWPaox5W7j1se6zXOG/aP07wV2ww0lxbKYGwbBszOtfQ==}
+  '@csstools/postcss-is-pseudo-class@5.0.2':
+    resolution: {integrity: sha512-ksUGH8Untwzo/qUwHlFZf2+vGi8sDe1WYDZrCFNVg8EvENhWQvtoPEbRTBmNzGzTJebmHIvaOH8s3B3QKUJV3g==}
     engines: {node: '>=18'}
     peerDependencies:
       postcss: ^8.4
@@ -277,8 +277,8 @@ packages:
     peerDependencies:
       postcss: ^8.4
 
-  '@csstools/selector-resolve-nested@3.0.0':
-    resolution: {integrity: sha512-ZoK24Yku6VJU1gS79a5PFmC8yn3wIapiKmPgun0hZgEI5AOqgH2kiPRsPz1qkGv4HL+wuDLH83yQyk6inMYrJQ==}
+  '@csstools/selector-resolve-nested@3.1.0':
+    resolution: {integrity: sha512-mf1LEW0tJLKfWyvn5KdDrhpxHyuxpbNwTIwOYLIvsTffeyOf85j5oIzfG0yosxDgx/sswlqBnESYUcQH0vgZ0g==}
     engines: {node: '>=18'}
     peerDependencies:
       postcss-selector-parser: ^7.0.0
@@ -455,9 +455,6 @@ packages:
 
   caniuse-api@3.0.0:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
-
-  caniuse-lite@1.0.30001715:
-    resolution: {integrity: sha512-7ptkFGMm2OAOgvZpwgA4yjQ5SQbrNVGdRjzH0pBdy1Fasvcr+KAeECmbCAECzTuDuoX0FCY8KzUxjf9+9kfZEw==}
 
   caniuse-lite@1.0.30001717:
     resolution: {integrity: sha512-auPpttCq6BDEG8ZAuHJIplGw6GODhjw+/11e7IjpnYCxZcW/ONgPs0KVBJ0d1bY3e2+7PRe5RCLyP+PfwVgkYw==}
@@ -1262,8 +1259,8 @@ packages:
     peerDependencies:
       postcss: ^8.2.14
 
-  postcss-nesting@13.0.1:
-    resolution: {integrity: sha512-VbqqHkOBOt4Uu3G8Dm8n6lU5+9cJFxiuty9+4rcoyRPO9zZS1JIs6td49VIoix3qYqELHlJIn46Oih9SAKo+yQ==}
+  postcss-nesting@13.0.2:
+    resolution: {integrity: sha512-1YCI290TX+VP0U/K/aFxzHzQWHWURL+CtHMSbex1lCdpXD1SoR2sYuxDu5aNI9lPoXpKTCggFZiDJbwylU0LEQ==}
     engines: {node: '>=18'}
     peerDependencies:
       postcss: ^8.4
@@ -1351,8 +1348,8 @@ packages:
     peerDependencies:
       postcss: ^8.4
 
-  postcss-preset-env@10.2.1:
-    resolution: {integrity: sha512-mDInnlm4mYhmR0S79hNLzseW9nx4Ihd8s15K99iu6u6QhoSQgqWX9Oj6nTd/8Dz3b0T7v2JSrfnXsDfv9TFvDg==}
+  postcss-preset-env@10.2.2:
+    resolution: {integrity: sha512-0w90xwitx3xQOkP1z0TPdt+8vhSAIkcOGmwZUywcWjBH/xI7ekJjZ0DYX1g6/fcpUEUsL7tCILUx4iYbwafxGQ==}
     engines: {node: '>=18'}
     peerDependencies:
       postcss: ^8.4
@@ -1394,10 +1391,6 @@ packages:
 
   postcss-selector-parser@6.1.2:
     resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
-    engines: {node: '>=4'}
-
-  postcss-selector-parser@7.0.0:
-    resolution: {integrity: sha512-9RbEr1Y7FFfptd/1eEdntyjMwLeghW1bHX9GWjXo19vx4ytPQhANltvVxDggzJl7mnWM+dX28kb6cyS/4iQjlQ==}
     engines: {node: '>=4'}
 
   postcss-selector-parser@7.1.0:
@@ -1838,7 +1831,7 @@ snapshots:
     dependencies:
       postcss: 8.5.4
 
-  '@csstools/postcss-is-pseudo-class@5.0.1(postcss@8.5.4)':
+  '@csstools/postcss-is-pseudo-class@5.0.2(postcss@8.5.4)':
     dependencies:
       '@csstools/selector-specificity': 5.0.0(postcss-selector-parser@7.1.0)
       postcss: 8.5.4
@@ -1967,7 +1960,7 @@ snapshots:
     dependencies:
       postcss: 8.5.4
 
-  '@csstools/selector-resolve-nested@3.0.0(postcss-selector-parser@7.1.0)':
+  '@csstools/selector-resolve-nested@3.1.0(postcss-selector-parser@7.1.0)':
     dependencies:
       postcss-selector-parser: 7.1.0
 
@@ -2067,7 +2060,7 @@ snapshots:
   autoprefixer@10.4.21(postcss@8.5.4):
     dependencies:
       browserslist: 4.25.0
-      caniuse-lite: 1.0.30001717
+      caniuse-lite: 1.0.30001721
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.1.1
@@ -2175,12 +2168,10 @@ snapshots:
 
   caniuse-api@3.0.0:
     dependencies:
-      browserslist: 4.24.5
-      caniuse-lite: 1.0.30001715
+      browserslist: 4.25.0
+      caniuse-lite: 1.0.30001721
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
-
-  caniuse-lite@1.0.30001715: {}
 
   caniuse-lite@1.0.30001717: {}
 
@@ -2742,7 +2733,7 @@ snapshots:
   postcss-calc@10.1.1(postcss@8.5.4):
     dependencies:
       postcss: 8.5.4
-      postcss-selector-parser: 7.0.0
+      postcss-selector-parser: 7.1.0
       postcss-value-parser: 4.2.0
 
   postcss-clamp@4.1.0(postcss@8.5.4):
@@ -2790,7 +2781,7 @@ snapshots:
 
   postcss-colormin@7.0.3(postcss@8.5.4):
     dependencies:
-      browserslist: 4.24.5
+      browserslist: 4.25.0
       caniuse-api: 3.0.0
       colord: 2.9.3
       postcss: 8.5.4
@@ -2798,7 +2789,7 @@ snapshots:
 
   postcss-convert-values@7.0.5(postcss@8.5.4):
     dependencies:
-      browserslist: 4.24.5
+      browserslist: 4.25.0
       postcss: 8.5.4
       postcss-value-parser: 4.2.0
 
@@ -2929,7 +2920,7 @@ snapshots:
 
   postcss-merge-rules@7.0.5(postcss@8.5.4):
     dependencies:
-      browserslist: 4.24.5
+      browserslist: 4.25.0
       caniuse-api: 3.0.0
       cssnano-utils: 5.0.1(postcss@8.5.4)
       postcss: 8.5.4
@@ -2949,7 +2940,7 @@ snapshots:
 
   postcss-minify-params@7.0.3(postcss@8.5.4):
     dependencies:
-      browserslist: 4.24.5
+      browserslist: 4.25.0
       cssnano-utils: 5.0.1(postcss@8.5.4)
       postcss: 8.5.4
       postcss-value-parser: 4.2.0
@@ -2965,9 +2956,9 @@ snapshots:
       postcss: 8.5.4
       postcss-selector-parser: 6.1.2
 
-  postcss-nesting@13.0.1(postcss@8.5.4):
+  postcss-nesting@13.0.2(postcss@8.5.4):
     dependencies:
-      '@csstools/selector-resolve-nested': 3.0.0(postcss-selector-parser@7.1.0)
+      '@csstools/selector-resolve-nested': 3.1.0(postcss-selector-parser@7.1.0)
       '@csstools/selector-specificity': 5.0.0(postcss-selector-parser@7.1.0)
       postcss: 8.5.4
       postcss-selector-parser: 7.1.0
@@ -3003,7 +2994,7 @@ snapshots:
 
   postcss-normalize-unicode@7.0.3(postcss@8.5.4):
     dependencies:
-      browserslist: 4.24.5
+      browserslist: 4.25.0
       postcss: 8.5.4
       postcss-value-parser: 4.2.0
 
@@ -3041,7 +3032,7 @@ snapshots:
       postcss: 8.5.4
       postcss-value-parser: 4.2.0
 
-  postcss-preset-env@10.2.1(postcss@8.5.4):
+  postcss-preset-env@10.2.2(postcss@8.5.4):
     dependencies:
       '@csstools/postcss-cascade-layers': 5.0.1(postcss@8.5.4)
       '@csstools/postcss-color-function': 4.0.10(postcss@8.5.4)
@@ -3055,7 +3046,7 @@ snapshots:
       '@csstools/postcss-hwb-function': 4.0.10(postcss@8.5.4)
       '@csstools/postcss-ic-unit': 4.0.2(postcss@8.5.4)
       '@csstools/postcss-initial': 2.0.1(postcss@8.5.4)
-      '@csstools/postcss-is-pseudo-class': 5.0.1(postcss@8.5.4)
+      '@csstools/postcss-is-pseudo-class': 5.0.2(postcss@8.5.4)
       '@csstools/postcss-light-dark-function': 2.0.9(postcss@8.5.4)
       '@csstools/postcss-logical-float-and-clear': 3.0.0(postcss@8.5.4)
       '@csstools/postcss-logical-overflow': 2.0.0(postcss@8.5.4)
@@ -3100,7 +3091,7 @@ snapshots:
       postcss-image-set-function: 7.0.0(postcss@8.5.4)
       postcss-lab-function: 7.0.10(postcss@8.5.4)
       postcss-logical: 8.1.0(postcss@8.5.4)
-      postcss-nesting: 13.0.1(postcss@8.5.4)
+      postcss-nesting: 13.0.2(postcss@8.5.4)
       postcss-opacity-percentage: 3.0.0(postcss@8.5.4)
       postcss-overflow-shorthand: 6.0.0(postcss@8.5.4)
       postcss-page-break: 3.0.4(postcss@8.5.4)
@@ -3116,7 +3107,7 @@ snapshots:
 
   postcss-reduce-initial@7.0.3(postcss@8.5.4):
     dependencies:
-      browserslist: 4.24.5
+      browserslist: 4.25.0
       caniuse-api: 3.0.0
       postcss: 8.5.4
 
@@ -3141,11 +3132,6 @@ snapshots:
       postcss-selector-parser: 7.1.0
 
   postcss-selector-parser@6.1.2:
-    dependencies:
-      cssesc: 3.0.0
-      util-deprecate: 1.0.2
-
-  postcss-selector-parser@7.0.0:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
@@ -3359,7 +3345,7 @@ snapshots:
 
   stylehacks@7.0.5(postcss@8.5.4):
     dependencies:
-      browserslist: 4.24.5
+      browserslist: 4.25.0
       postcss: 8.5.4
       postcss-selector-parser: 7.1.0
 
