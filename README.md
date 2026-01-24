@@ -1,4 +1,3 @@
-jackmcpickle.github.io
-======================
+# jackmcpickle.github.io
 
 my website

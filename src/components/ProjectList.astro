@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectItem from './ProjectItem.astro';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<section class="mx-auto max-w-6xl px-6 pb-16">
+  <div class="mb-10">
+    <div class="flex items-center gap-x-6">
+      <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-300">Selected Work</h2>
+      <div class="h-px flex-auto bg-slate-800" />
+    </div>
+    <p class="mt-4 max-w-2xl text-lg text-slate-400">
+      Focused on product strategy, platform architecture, and hands-on delivery.
+    </p>
+  </div>
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {projects.map((project) => (
+      <ProjectItem project={project} />
+    ))}
+  </div>
+</section>

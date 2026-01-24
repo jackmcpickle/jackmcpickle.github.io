@@ -2,6 +2,6 @@
 name: pride models
 url: https://pridemodels.com.au
 tags:
-  - website
+    - website
 order: 13
 ---

@@ -1,17 +1,32 @@
 {
     "name": "jackmcpickle.github.io",
+    "version": "4.0.0",
     "description": "Jack McNicol personal website",
     "repository": {
         "type": "git",
         "url": "https://github.com/jackmcpickle/jackmcpickle.github.io/"
     },
-    "version": "4.0.0",
     "scripts": {
-        "test": "npm run build"
+        "dev": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "check": "astro check",
+        "fmt": "oxfmt",
+        "fmt:check": "oxfmt --check",
+        "lint": "oxlint --type-aware --type-check",
+        "lint:fix": "oxlint --type-aware --type-check --fix"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.9.6",
+        "typescript": "^5.9.3"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.1.18",
+        "@types/node": "^25.0.10",
         "astro": "^5.16.15",
+        "oxfmt": "^0.26.0",
+        "oxlint": "^1.41.0",
+        "oxlint-tsgolint": "^0.11.1",
         "tailwindcss": "4.1.18"
     }
 }

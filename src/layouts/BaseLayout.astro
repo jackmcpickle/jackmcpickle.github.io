@@ -13,7 +13,7 @@ const {
 ---
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,8 +22,14 @@ const {
     <meta name="color-scheme" content="light,dark" />
     <meta name="supported-color-schemes" content="light,dark" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="bg-slate-950 text-slate-100 font-['Space_Grotesk','Segoe_UI',sans-serif] antialiased">
     <slot />
     <script defer src="https://track.mcpickle.com.au/latest.js" data-website-id="daeb6988-ce26-482d-8d98-9eb1645366d6"></script>
   </body>

@@ -1,9 +1,10 @@
 {
-  "permissions": {
-    "allow": [
-      "Bash(xargs:*)",
-      "Bash(pnpm add:*)",
-      "Bash(pnpm remove:*)"
-    ]
-  }
+    "permissions": {
+        "allow": [
+            "Bash(xargs:*)",
+            "Bash(pnpm add:*)",
+            "Bash(pnpm remove:*)",
+            "Bash(lsof:*)"
+        ]
+    }
 }

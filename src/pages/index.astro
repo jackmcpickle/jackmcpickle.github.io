@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Bio from '../components/Bio.astro';
+import ProjectList from '../components/ProjectList.astro';
+---
+
+<BaseLayout title="jack.mcpickle/dev" description="Consultant / Instructor / Developer">
+  <div class="min-h-screen bg-slate-950 text-slate-100">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.15),_transparent_55%),radial-gradient(circle_at_30%_30%,_rgba(236,72,153,0.12),_transparent_50%)]"></div>
+    <Header />
+    <main>
+      <Bio />
+      <ProjectList />
+    </main>
+  </div>
+</BaseLayout>
