@@ -1,0 +1,30 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "jack.mcpickle/dev",
+  description = "Consultant / Instructor / Developer"
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="light,dark" />
+    <meta name="supported-color-schemes" content="light,dark" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <slot />
+    <script defer src="https://track.mcpickle.com.au/latest.js" data-website-id="daeb6988-ce26-482d-8d98-9eb1645366d6"></script>
+  </body>
+</html>
