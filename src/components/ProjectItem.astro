@@ -22,7 +22,7 @@ const { project } = Astro.props;
     {new URL(project.data.url).host}
   </p>
   <div class="mt-auto flex flex-wrap gap-2 pt-6">
-    {project.data.tags.map((tag) => (
+    {project.data.tags.map((tag: string) => (
       <span class="rounded-full bg-slate-800/80 px-3 py-1 text-xs uppercase tracking-[0.15em] text-slate-400 ring-1 ring-slate-700/50">
         {tag}
       </span>

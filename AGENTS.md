@@ -30,12 +30,19 @@ pnpm build
 # Preview production build
 pnpm preview
 
-# Test (runs build)
-pnpm test
+# Type checking (Astro + TypeScript)
+pnpm check
+
+# Linting (oxlint with type-aware rules)
+pnpm lint
+pnpm lint:fix    # Auto-fix issues
+
+# Formatting (oxfmt)
+pnpm fmt
+pnpm fmt:check   # Check without writing
 ```
 
-**No dedicated test runner** - the test script just runs the build.
-No eslint or prettier configured.
+**No dedicated test runner** - validate with `pnpm build` + `pnpm check`.
 
 ## Project Structure
 
