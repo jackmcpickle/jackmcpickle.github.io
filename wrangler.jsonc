@@ -3,6 +3,8 @@
     "name": "jackmcpickle-website",
     "compatibility_date": "2025-01-28",
     "compatibility_flags": ["nodejs_compat"],
+    "workers_dev": true,
+    "routes": [{ "pattern": "jack.mcpickle.com.au", "custom_domain": true }],
     "assets": {
         "directory": "./dist",
     },
