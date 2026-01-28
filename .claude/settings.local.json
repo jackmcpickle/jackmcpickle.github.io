@@ -4,7 +4,10 @@
             "Bash(xargs:*)",
             "Bash(pnpm add:*)",
             "Bash(pnpm remove:*)",
-            "Bash(lsof:*)"
+            "Bash(lsof:*)",
+            "Bash(npx wrangler:*)",
+            "Bash(pnpm build:*)",
+            "Bash(grep:*)"
         ]
     }
 }

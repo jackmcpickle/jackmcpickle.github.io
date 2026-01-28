@@ -4,3 +4,5 @@ dist
 .DS_Store
 *.log
 public/css/app.css
+
+delete-all-deployments/

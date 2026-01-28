@@ -1,13 +1,12 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "jackmcpickle-website",
-  "compatibility_date": "2025-01-28",
-  "compatibility_flags": ["nodejs_compat"],
-  "assets": {
-    "binding": "ASSETS",
-    "directory": "./dist",
-  },
-  "observability": {
-    "enabled": true,
-  },
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "jackmcpickle-website",
+    "compatibility_date": "2025-01-28",
+    "compatibility_flags": ["nodejs_compat"],
+    "assets": {
+        "directory": "./dist",
+    },
+    "observability": {
+        "enabled": true,
+    },
 }
