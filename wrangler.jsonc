@@ -1,0 +1,8 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "jackmcpickle-portfolio",
+    "compatibility_date": "2025-01-28",
+    "site": {
+        "bucket": "./dist"
+    }
+}
