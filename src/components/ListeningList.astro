@@ -1,13 +1,9 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
+import { getSortedListening } from '../lib/collections';
 import MacWindow from './MacWindow.astro';
 import ListeningItem from './ListeningItem.astro';
 
-const items = (await getCollection('listening')).sort(
-    (a: CollectionEntry<'listening'>, b: CollectionEntry<'listening'>) =>
-        a.data.order - b.data.order,
-);
+const items = await getSortedListening();
 ---
 
 <MacWindow

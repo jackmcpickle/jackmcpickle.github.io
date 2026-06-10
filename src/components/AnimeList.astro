@@ -1,12 +1,9 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
+import { getSortedAnime } from '../lib/collections';
 import MacWindow from './MacWindow.astro';
 import AnimeItem from './AnimeItem.astro';
 
-const items = (await getCollection('anime')).sort(
-    (a: CollectionEntry<'anime'>, b: CollectionEntry<'anime'>) => a.data.order - b.data.order,
-);
+const items = await getSortedAnime();
 ---
 
 <MacWindow

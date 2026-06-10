@@ -1,13 +1,9 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
+import { getSortedProjects } from '../lib/collections';
 import MacWindow from './MacWindow.astro';
 import ProjectItem from './ProjectItem.astro';
 
-const projects = (await getCollection('projects')).sort(
-    (a: CollectionEntry<'projects'>, b: CollectionEntry<'projects'>) =>
-        a.data.order - b.data.order,
-);
+const projects = await getSortedProjects();
 ---
 
 <MacWindow

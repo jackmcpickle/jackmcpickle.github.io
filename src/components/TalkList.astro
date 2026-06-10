@@ -1,12 +1,9 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
+import { getSortedTalks } from '../lib/collections';
 import MacWindow from './MacWindow.astro';
 import TalkItem from './TalkItem.astro';
 
-const talks = (await getCollection('talks')).sort(
-    (a: CollectionEntry<'talks'>, b: CollectionEntry<'talks'>) => a.data.order - b.data.order,
-);
+const talks = await getSortedTalks();
 ---
 
 <MacWindow

@@ -1,12 +1,9 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { getCollection } from 'astro:content';
+import { getSortedApps } from '../lib/collections';
 import MacWindow from './MacWindow.astro';
 import AppItem from './AppItem.astro';
 
-const apps = (await getCollection('apps')).sort(
-    (a: CollectionEntry<'apps'>, b: CollectionEntry<'apps'>) => a.data.order - b.data.order,
-);
+const apps = await getSortedApps();
 ---
 
 <MacWindow

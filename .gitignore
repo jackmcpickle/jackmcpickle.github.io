@@ -6,3 +6,4 @@ dist
 public/css/app.css
 
 .tmp/
+.playwright-mcp/
