@@ -5,4 +5,4 @@ dist
 *.log
 public/css/app.css
 
-delete-all-deployments/
+.tmp/

@@ -1,9 +1,0 @@
-{
-    "$schema": "./node_modules/oxfmt/configuration_schema.json",
-    "printWidth": 80,
-    "semi": true,
-    "useTabs": false,
-    "tabWidth": 4,
-    "singleQuote": true,
-    "trailingComma": "all"
-}

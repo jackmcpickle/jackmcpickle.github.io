@@ -4,12 +4,20 @@ import '../styles/global.css';
 interface Props {
     title?: string;
     description?: string;
+    ogImage?: string;
+    jsonLd?: Record<string, unknown>[];
 }
 
 const {
     title = 'jack.mcpickle/dev',
-    description = 'Consultant / Instructor / Developer',
+    description = 'Jack McPickle is an Australian consultant, instructor, and developer who builds digital products, mentors teams, and delivers e-commerce and platform work worldwide.',
+    ogImage = '/images/profile-pic-jack.jpg',
+    jsonLd = [],
 } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImageUrl = new URL(ogImage, Astro.site);
+const structuredData = jsonLd.filter(Boolean);
 ---
 
 <!doctype html>
@@ -19,6 +27,20 @@ const {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="author" content="Jack McPickle" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="jack.mcpickle/dev" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:locale" content="en_AU" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImageUrl} />
         <meta name="color-scheme" content="light" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,6 +48,11 @@ const {
             href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500&family=VT323&display=swap"
             rel="stylesheet"
         />
+        {
+            structuredData.map((schema) => (
+                <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+            ))
+        }
     </head>
     <body>
         <slot />

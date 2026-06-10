@@ -7,7 +7,7 @@
     hidden
 >
     <div class="dialog-frame">
-        <div class="about-head">
+        <div class="mb-3.5 flex items-center gap-[18px] border-b border-hairline pb-3.5">
             <div class="happy-mac mini">
                 <div class="screen"><div class="face">^_^</div></div>
                 <div class="slot"></div>
@@ -17,23 +17,27 @@
                 <p>System jack.mcpickle/dev 1.0 · © 1984–2026</p>
             </div>
         </div>
-        <div class="mem-table">
-            <p class="mem-total"><span>Total Memory :</span> <span>128K</span></p>
-            <div class="mem-row">
-                <span class="mem-name">System Software</span><span class="mem-kb">64K</span>
+        <div class="text-[12.5px]">
+            <p class="mb-2.5 flex justify-between font-bold">
+                <span>Total Memory :</span> <span>128K</span>
+            </p>
+            <div class="grid grid-cols-[1fr_44px_120px] items-center gap-2.5 py-[3px]">
+                <span class="mem-name">System Software</span><span class="text-right tabular-nums">64K</span>
                 <span class="mem-bar"><span class="mem-fill" style="width: 50%"></span></span>
             </div>
-            <div class="mem-row">
-                <span class="mem-name">Manga Buffer</span><span class="mem-kb">48K</span>
+            <div class="grid grid-cols-[1fr_44px_120px] items-center gap-2.5 py-[3px]">
+                <span class="mem-name">Manga Buffer</span><span class="text-right tabular-nums">48K</span>
                 <span class="mem-bar"><span class="mem-fill" style="width: 37.5%"></span></span>
             </div>
-            <div class="mem-row">
-                <span class="mem-name">Coffee Driver</span><span class="mem-kb">16K</span>
+            <div class="grid grid-cols-[1fr_44px_120px] items-center gap-2.5 py-[3px]">
+                <span class="mem-name">Coffee Driver</span><span class="text-right tabular-nums">16K</span>
                 <span class="mem-bar"><span class="mem-fill" style="width: 12.5%"></span></span>
             </div>
-            <p class="mem-note">Largest unused block : weekends</p>
+            <p class="mem-note mt-2.5 font-terminal text-sm text-ink-soft">
+                Largest unused block : weekends
+            </p>
         </div>
-        <div class="about-actions">
+        <div class="about-actions mt-4 flex justify-end">
             <button class="mac-btn primary" id="aboutok" type="button">OK</button>
         </div>
     </div>

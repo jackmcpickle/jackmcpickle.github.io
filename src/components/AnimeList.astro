@@ -16,7 +16,7 @@ const items = (await getCollection('anime')).sort(
     offset="l"
     screenLabel="Manga reading log window"
 >
-    <div class="manga-list">
+    <div class="flex flex-col">
         {items.map((item) => (
             <AnimeItem item={item} />
         ))}

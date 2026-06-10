@@ -17,12 +17,14 @@ const projects = (await getCollection('projects')).sort(
     offset="r"
     screenLabel="Selected work window"
 >
-    <div class="finder-list">
-        <div class="finder-head">
+    <article class="finder-list">
+        <div
+            class="finder-head grid grid-cols-[minmax(130px,1.3fr)_minmax(0,1.1fr)_minmax(0,1.5fr)] items-baseline gap-3 px-3 py-1.5 @max-[530px]/crt:grid-cols-2"
+        >
             <span>Name</span><span>Location</span><span>Kind</span>
         </div>
         {projects.map((project) => (
             <ProjectItem project={project} />
         ))}
-    </div>
+    </article>
 </MacWindow>

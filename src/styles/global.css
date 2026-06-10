@@ -1,1 +1,21 @@
+@import 'tailwindcss';
+
+@theme {
+    --color-accent: #00ff9d;
+    --color-plat: #c8c8c4;
+    --color-plat-deep: #aeaeaa;
+    --color-bone: #efefea;
+    --color-ink: #1a1a1a;
+    --color-ink-soft: #555550;
+    --color-hairline: #8e8e88;
+    --color-case: #ddd5c1;
+    --color-case-hi: #eae3d2;
+    --color-case-lo: #b9b09a;
+    --color-case-edge: #8f876f;
+    --color-case-recess: #cfc7b2;
+    --font-display: 'Pixelify Sans', 'Chicago', monospace;
+    --font-terminal: 'VT323', 'Monaco', monospace;
+    --font-body: 'Geneva', 'Verdana', 'Tahoma', sans-serif;
+}
+
 @import './portfolio.css';

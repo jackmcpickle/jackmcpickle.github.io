@@ -8,8 +8,16 @@ interface Props {
 const { talk } = Astro.props;
 ---
 
-<a class="talk-row" href={talk.data.url} target="_blank" rel="noreferrer">
-    <span class="play" aria-hidden="true">{talk.data.date.slice(0, 4)}</span>
+<a
+    class="talk-row flex items-center gap-3.5 px-[15px] py-[11px] no-underline"
+    href={talk.data.url}
+    target="_blank"
+    rel="noreferrer"
+>
+    <span
+        class="play grid h-8 w-8 shrink-0 place-items-center font-terminal text-[13px] tracking-wide"
+        aria-hidden="true"
+    >{talk.data.date.slice(0, 4)}</span>
     <div>
         <h3>{talk.data.title}</h3>
         <p>{talk.data.event} · {talk.data.date}</p>

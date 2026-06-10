@@ -1,3 +1,23 @@
-# robotstxt.org/
+# https://jack.mcpickle.com.au
+# Allow all crawlers, including AI training and retrieval bots.
 
 User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+Sitemap: https://jack.mcpickle.com.au/sitemap.xml
+Sitemap: https://jack.mcpickle.com.au/sitemap-index.xml

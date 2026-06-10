@@ -16,9 +16,9 @@ const talks = (await getCollection('talks')).sort(
     offset="l"
     screenLabel="Talks window"
 >
-    <div class="talk-list">
+    <article class="flex flex-col gap-3">
         {talks.map((talk) => (
             <TalkItem talk={talk} />
         ))}
-    </div>
+    </article>
 </MacWindow>

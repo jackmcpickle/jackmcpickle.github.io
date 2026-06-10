@@ -9,7 +9,9 @@ const { item } = Astro.props;
 ---
 
 <div class="manga-row">
-    <span class="m-title">{item.data.title}</span>
+    <span class="m-title truncate text-[13px] font-bold">{item.data.title}</span>
     <span class="progress"><span class="bar"></span></span>
-    <span class="m-ch">{item.data.chapter}</span>
+    <span class="m-ch text-right font-terminal text-[15px] tracking-wide whitespace-nowrap">
+        {item.data.chapter}
+    </span>
 </div>

@@ -9,8 +9,15 @@ const { project } = Astro.props;
 const host = new URL(project.data.url).host.replace(/^www\./, '');
 ---
 
-<a class="finder-row" href={project.data.url} target="_blank" rel="noreferrer">
-    <span class="f-name">{project.data.name}</span>
-    <span class="f-url">{host}</span>
-    <span class="f-tags">{project.data.tags.join(' · ')}</span>
+<a
+    class="finder-row grid grid-cols-[minmax(130px,1.3fr)_minmax(0,1.1fr)_minmax(0,1.5fr)] items-baseline gap-3 px-3 py-1.5 text-[13px] @max-[530px]/crt:grid-cols-2"
+    href={project.data.url}
+    target="_blank"
+    rel="noreferrer"
+>
+    <span class="f-name font-bold">{project.data.name}</span>
+    <span class="f-url truncate text-ink-soft @max-[530px]/crt:hidden">{host}</span>
+    <span class="f-tags truncate font-terminal text-sm tracking-wide uppercase text-ink-soft">
+        {project.data.tags.join(' · ')}
+    </span>
 </a>

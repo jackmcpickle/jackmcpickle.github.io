@@ -13,7 +13,7 @@ const icon = app.data.name.charAt(0).toUpperCase();
     <span class="app-icon">{icon}</span>
     <h3>{app.data.name}</h3>
     <p>{app.data.description}</p>
-    <span class="tags">
+    <span class="flex flex-wrap gap-1.5">
         {app.data.tags.map((tag) => (
             <span class="tag">{tag}</span>
         ))}

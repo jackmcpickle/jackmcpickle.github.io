@@ -1,7 +1,7 @@
 allowBuilds:
-  esbuild: true
-  sharp: true
-  workerd: true
+    esbuild: true
+    sharp: true
+    workerd: true
 
 enableGlobalVirtualStore: true
 minimumReleaseAge: 1440
@@ -10,4 +10,6 @@ minimumReleaseAgeIgnoreMissingTime: false
 blockExoticSubdeps: true
 strictDepBuilds: true
 minimumReleaseAgeExclude:
-  - astro@6.4.5
+    - astro@6.4.5
+    - wrangler@4.99.0
+    - miniflare@4.20260609.0

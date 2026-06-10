@@ -9,8 +9,8 @@ const { item } = Astro.props;
 const subtitle = item.data.description ?? item.data.creator;
 ---
 
-<div class="podcast-row">
-    <span class="play" aria-hidden="true">▶</span>
+<div class="podcast-row flex items-center gap-3.5 px-[15px] py-[11px]">
+    <span class="play grid h-8 w-8 shrink-0 place-items-center text-xs" aria-hidden="true">▶</span>
     <div>
         <h3>{item.data.title}</h3>
         <p>{subtitle}</p>

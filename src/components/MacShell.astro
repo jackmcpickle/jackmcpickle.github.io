@@ -6,25 +6,29 @@ import ProjectList from './ProjectList.astro';
 import TalkList from './TalkList.astro';
 import ListeningList from './ListeningList.astro';
 import AnimeList from './AnimeList.astro';
+import FaqSection from './FaqSection.astro';
 import SiteFooter from './SiteFooter.astro';
 import BootScreen from './BootScreen.astro';
 import AboutDialog from './AboutDialog.astro';
 import MacChin from './MacChin.astro';
 ---
 
-<div class="room">
+<div class="grid h-full place-items-center px-2 py-[1.5dvh]">
     <div class="mac" data-screen-label="Macintosh 128K">
         <div class="bezel">
             <div class="crt">
                 <div class="crt-content" id="crt">
                     <MenuBar />
-                    <main class="desktop">
+                    <main
+                        class="mx-auto flex max-w-[880px] flex-col gap-11 px-[clamp(14px,3cqw,24px)] pb-14 pt-9"
+                    >
                         <AboutSection />
                         <AppList />
                         <ProjectList />
                         <TalkList />
                         <ListeningList />
                         <AnimeList />
+                        <FaqSection />
                         <SiteFooter />
                     </main>
                 </div>
@@ -42,4 +46,6 @@ import MacChin from './MacChin.astro';
     </div>
 </div>
 
-<script src="../scripts/portfolio.js"></script>
+<script>
+    import '../scripts/portfolio/index.ts';
+</script>

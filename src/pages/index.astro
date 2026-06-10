@@ -1,8 +1,28 @@
 ---
+import { getSortedTalks } from '../lib/collections';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MacShell from '../components/MacShell.astro';
+import {
+    organizationSchema,
+    websiteSchema,
+    personSchema,
+    faqPageSchema,
+    articleSchema,
+    FAQ_ITEMS,
+} from '../lib/structured-data';
+import { HOME_PAGE } from '../lib/site-content';
+
+const talks = await getSortedTalks();
+
+const jsonLd = [
+    organizationSchema,
+    websiteSchema,
+    personSchema,
+    faqPageSchema(FAQ_ITEMS),
+    ...talks.map((talk) => articleSchema(talk.data)),
+];
 ---
 
-<BaseLayout title="jack.mcpickle/dev" description="Consultant / Instructor / Developer">
+<BaseLayout title={HOME_PAGE.title} description={HOME_PAGE.description} jsonLd={jsonLd}>
     <MacShell />
 </BaseLayout>

@@ -16,7 +16,7 @@ const apps = (await getCollection('apps')).sort(
     offset="l"
     screenLabel="Recent apps window"
 >
-    <div class="app-grid">
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] gap-4">
         {apps.map((app) => (
             <AppItem app={app} />
         ))}

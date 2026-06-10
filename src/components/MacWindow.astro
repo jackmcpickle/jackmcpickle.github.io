@@ -11,7 +11,11 @@ const { id, title, note, offset, screenLabel } = Astro.props;
 ---
 
 <section
-    class:list={['window', 'zoomable', offset && `offset-${offset}`]}
+    class:list={[
+        'window zoomable scroll-mt-11',
+        offset === 'l' && 'mr-[5%] @max-[600px]/crt:mr-0',
+        offset === 'r' && 'ml-[5%] @max-[600px]/crt:ml-0',
+    ]}
     {id}
     data-screen-label={screenLabel}
 >
@@ -19,8 +23,14 @@ const { id, title, note, offset, screenLabel } = Astro.props;
         <span class="closebox"></span>
         <h2>{title}</h2>
     </div>
-    <div class="window-body">
-        {note && <p class="window-note">{note}</p>}
+    <div
+        class="window-body overflow-hidden px-[26px] py-6 @max-[470px]/crt:px-3.5 @max-[470px]/crt:py-[18px]"
+    >
+        {
+            note && (
+                <p class="mb-[18px] max-w-[60ch] text-[13px] text-ink-soft">{note}</p>
+            )
+        }
         <slot />
     </div>
 </section>
