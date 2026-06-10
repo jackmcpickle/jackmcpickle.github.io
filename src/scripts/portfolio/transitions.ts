@@ -56,13 +56,12 @@ function writeCrtViewTransitionBounds(bounds: CrtBounds): void {
 }`;
 }
 
-function cacheCrtBounds(): boolean {
+function cacheCrtBounds(): void {
     const bounds = readCrtBounds();
-    if (!bounds) return false;
+    if (!bounds) return;
 
     cachedCrtBounds = bounds;
     writeCrtViewTransitionBounds(bounds);
-    return true;
 }
 
 function clearCrtViewTransitionBounds(): void {
@@ -87,7 +86,7 @@ export function initViewTransitions(): void {
                 writeCrtViewTransitionBounds(cachedCrtBounds);
             }
 
-            event.viewTransition?.finished.finally(() => {
+            void event.viewTransition?.finished.finally(() => {
                 clearCrtViewTransitionBounds();
                 cacheCrtBounds();
             });
