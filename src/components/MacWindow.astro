@@ -3,19 +3,14 @@ interface Props {
     id: string;
     title: string;
     note?: string;
-    offset?: 'l' | 'r';
     screenLabel?: string;
 }
 
-const { id, title, note, offset, screenLabel } = Astro.props;
+const { id, title, note, screenLabel } = Astro.props;
 ---
 
 <section
-    class:list={[
-        'window zoomable scroll-mt-11',
-        offset === 'l' && 'mr-[5%] @max-[600px]/crt:mr-0',
-        offset === 'r' && 'ml-[5%] @max-[600px]/crt:ml-0',
-    ]}
+    class="window zoomable scroll-mt-11"
     {id}
     data-screen-label={screenLabel}
 >
