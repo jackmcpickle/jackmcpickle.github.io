@@ -1,0 +1,26 @@
+---
+interface Props {
+    id: string;
+    title: string;
+    note?: string;
+    offset?: 'l' | 'r';
+    screenLabel?: string;
+}
+
+const { id, title, note, offset, screenLabel } = Astro.props;
+---
+
+<section
+    class:list={['window', 'zoomable', offset && `offset-${offset}`]}
+    {id}
+    data-screen-label={screenLabel}
+>
+    <div class="titlebar">
+        <span class="closebox"></span>
+        <h2>{title}</h2>
+    </div>
+    <div class="window-body">
+        {note && <p class="window-note">{note}</p>}
+        <slot />
+    </div>
+</section>

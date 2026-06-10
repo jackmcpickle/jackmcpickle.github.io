@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+    app: CollectionEntry<'apps'>;
+}
+
+const { app } = Astro.props;
+const icon = app.data.name.charAt(0).toUpperCase();
+---
+
+<a class="app-card" href={app.data.url} target="_blank" rel="noreferrer">
+    <span class="app-icon">{icon}</span>
+    <h3>{app.data.name}</h3>
+    <p>{app.data.description}</p>
+    <span class="tags">
+        {app.data.tags.map((tag) => (
+            <span class="tag">{tag}</span>
+        ))}
+    </span>
+</a>

@@ -1,0 +1,51 @@
+---
+import MacWindow from './MacWindow.astro';
+
+const profileImage = '/images/profile-pic-jack.jpg';
+---
+
+<MacWindow id="about" title="About This Developer" screenLabel="About window">
+    <div class="hero-body">
+        <div class="portrait">
+            <img
+                src={profileImage}
+                alt="Portrait of Jack McPickle"
+                loading="eager"
+                decoding="async"
+            />
+            <span class="portrait-fallback" aria-hidden="true">JM</span>
+        </div>
+        <div class="hero-text">
+            <h1>jack mcpickle<span class="cursor"></span></h1>
+            <p class="role">Consultant / Instructor / Developer</p>
+            <p class="bio">
+                Jack builds digital products, mentors teams, and keeps large-scale platforms moving.
+                He blends thoughtful architecture with hands-on delivery, from greenfield builds to
+                legacy transformations.
+            </p>
+            <p class="loc">Based in Australia · Working worldwide</p>
+            <div class="btn-row">
+                <a class="mac-btn primary" href="mailto:jack@mcpickle.com.au">Email</a>
+                <a
+                    class="mac-btn"
+                    href="https://github.com/jackmcpickle"
+                    target="_blank"
+                    rel="noreferrer">GitHub</a>
+                <a
+                    class="mac-btn"
+                    href="https://www.linkedin.com/in/jackmcpickle/"
+                    target="_blank"
+                    rel="noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </div>
+</MacWindow>
+
+<script>
+    const portrait = document.querySelector<HTMLImageElement>('.portrait img');
+    portrait?.addEventListener('error', () => {
+        if (!portrait) return;
+        portrait.style.display = 'none';
+        portrait.parentElement?.classList.add('no-photo');
+    });
+</script>

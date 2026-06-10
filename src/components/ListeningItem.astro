@@ -1,0 +1,18 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+    item: CollectionEntry<'listening'>;
+}
+
+const { item } = Astro.props;
+const subtitle = item.data.description ?? item.data.creator;
+---
+
+<div class="podcast-row">
+    <span class="play" aria-hidden="true">▶</span>
+    <div>
+        <h3>{item.data.title}</h3>
+        <p>{subtitle}</p>
+    </div>
+</div>

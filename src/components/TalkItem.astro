@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+    talk: CollectionEntry<'talks'>;
+}
+
+const { talk } = Astro.props;
+---
+
+<a class="talk-row" href={talk.data.url} target="_blank" rel="noreferrer">
+    <span class="play" aria-hidden="true">{talk.data.date.slice(0, 4)}</span>
+    <div>
+        <h3>{talk.data.title}</h3>
+        <p>{talk.data.event} · {talk.data.date}</p>
+    </div>
+</a>

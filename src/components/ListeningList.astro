@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import MacWindow from './MacWindow.astro';
+import ListeningItem from './ListeningItem.astro';
+
+const items = (await getCollection('listening')).sort(
+    (a: CollectionEntry<'listening'>, b: CollectionEntry<'listening'>) =>
+        a.data.order - b.data.order,
+);
+---
+
+<MacWindow
+    id="podcasts"
+    title="Now Playing — Podcasts"
+    note="On rotation between builds."
+    offset="r"
+    screenLabel="Podcasts window"
+>
+    <div class="podcast-list">
+        {items.map((item) => (
+            <ListeningItem item={item} />
+        ))}
+    </div>
+</MacWindow>

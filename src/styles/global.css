@@ -1,5 +1,1 @@
-@import 'tailwindcss';
-
-p {
-    margin: 1rem 0;
-}
+@import './portfolio.css';

@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+    item: CollectionEntry<'anime'>;
+}
+
+const { item } = Astro.props;
+---
+
+<div class="manga-row">
+    <span class="m-title">{item.data.title}</span>
+    <span class="progress"><span class="bar"></span></span>
+    <span class="m-ch">{item.data.chapter}</span>
+</div>

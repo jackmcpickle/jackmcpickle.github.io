@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import MacWindow from './MacWindow.astro';
+import AnimeItem from './AnimeItem.astro';
+
+const items = (await getCollection('anime')).sort(
+    (a: CollectionEntry<'anime'>, b: CollectionEntry<'anime'>) => a.data.order - b.data.order,
+);
+---
+
+<MacWindow
+    id="manga"
+    title="Manga Reading Log"
+    note="Currently reading — all caught up to the latest chapter."
+    offset="l"
+    screenLabel="Manga reading log window"
+>
+    <div class="manga-list">
+        {items.map((item) => (
+            <AnimeItem item={item} />
+        ))}
+    </div>
+</MacWindow>

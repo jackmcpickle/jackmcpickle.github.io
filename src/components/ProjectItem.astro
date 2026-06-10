@@ -2,30 +2,15 @@
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-  project: CollectionEntry<'projects'>;
+    project: CollectionEntry<'projects'>;
 }
 
 const { project } = Astro.props;
+const host = new URL(project.data.url).host.replace(/^www\./, '');
 ---
 
-<a
-  href={project.data.url}
-  class="group relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-slate-700/40 transition hover:bg-slate-800/50 hover:ring-slate-600/60 sm:p-8"
-  target="_blank"
-  rel="noreferrer"
->
-  <span class="absolute inset-0 rounded-3xl" />
-  <h3 class="text-xl font-semibold text-slate-100 transition group-hover:text-white">
-    {project.data.name}
-  </h3>
-  <p class="mt-2 text-xs uppercase tracking-[0.25em] text-slate-500">
-    {new URL(project.data.url).host}
-  </p>
-  <div class="mt-auto flex flex-wrap gap-2 pt-6">
-    {project.data.tags.map((tag: string) => (
-      <span class="rounded-full bg-slate-800/80 px-3 py-1 text-xs uppercase tracking-[0.15em] text-slate-400 ring-1 ring-slate-700/50">
-        {tag}
-      </span>
-    ))}
-  </div>
+<a class="finder-row" href={project.data.url} target="_blank" rel="noreferrer">
+    <span class="f-name">{project.data.name}</span>
+    <span class="f-url">{host}</span>
+    <span class="f-tags">{project.data.tags.join(' · ')}</span>
 </a>

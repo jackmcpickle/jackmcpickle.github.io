@@ -1,26 +1,28 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
+import MacWindow from './MacWindow.astro';
 import ProjectItem from './ProjectItem.astro';
 
 const projects = (await getCollection('projects')).sort(
-  (a: CollectionEntry<'projects'>, b: CollectionEntry<'projects'>) => a.data.order - b.data.order
+    (a: CollectionEntry<'projects'>, b: CollectionEntry<'projects'>) =>
+        a.data.order - b.data.order,
 );
 ---
 
-<section class="mx-auto max-w-6xl px-6 pb-16">
-  <div class="mb-10">
-    <div class="flex items-center gap-x-6">
-      <h2 class="text-sm font-semibold uppercase tracking-wider text-slate-300">Selected Work</h2>
-      <div class="h-px flex-auto bg-slate-800" />
+<MacWindow
+    id="work"
+    title="Selected Work"
+    note="Product strategy, platform architecture, and hands-on delivery."
+    offset="r"
+    screenLabel="Selected work window"
+>
+    <div class="finder-list">
+        <div class="finder-head">
+            <span>Name</span><span>Location</span><span>Kind</span>
+        </div>
+        {projects.map((project) => (
+            <ProjectItem project={project} />
+        ))}
     </div>
-    <p class="mt-4 max-w-2xl text-lg text-slate-400">
-      Focused on product strategy, platform architecture, and hands-on delivery.
-    </p>
-  </div>
-  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-    {projects.map((project: CollectionEntry<'projects'>) => (
-      <ProjectItem project={project} />
-    ))}
-  </div>
-</section>
+</MacWindow>
