@@ -1,0 +1,13 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
+
+enableGlobalVirtualStore: true
+minimumReleaseAge: 1440
+minimumReleaseAgeStrict: true
+minimumReleaseAgeIgnoreMissingTime: false
+blockExoticSubdeps: true
+strictDepBuilds: true
+minimumReleaseAgeExclude:
+  - astro@6.4.5
