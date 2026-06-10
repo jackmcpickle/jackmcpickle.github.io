@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const host = new URL(project.data.url).host.replace(/^www\./, '');
+const host = new URL(project.data.url).host.replace(/^www\./u, '');
 ---
 
 <a

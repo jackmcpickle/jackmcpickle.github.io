@@ -6,7 +6,7 @@ const projects = defineCollection({
     loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
     schema: z.object({
         name: z.string(),
-        url: z.string().url(),
+        url: z.url(),
         tags: z.array(z.string()),
         order: z.number(),
     }),

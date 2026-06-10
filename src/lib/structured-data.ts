@@ -3,7 +3,7 @@ import { FAQ_ITEMS, HOME_PAGE, SITE, SITE_URL } from './site-content';
 export { FAQ_ITEMS };
 export type { FaqItem } from './site-content';
 
-export function organizationSchema(profileImageUrl: string) {
+export function organizationSchema(profileImageUrl: string): Record<string, unknown> {
     return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -39,7 +39,7 @@ export const websiteSchema = {
     inLanguage: 'en-AU',
 };
 
-export function personSchema(profileImageUrl: string) {
+export function personSchema(profileImageUrl: string): Record<string, unknown> {
     return {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -70,7 +70,7 @@ export function personSchema(profileImageUrl: string) {
     };
 }
 
-export function faqPageSchema(items: typeof FAQ_ITEMS) {
+export function faqPageSchema(items: typeof FAQ_ITEMS): Record<string, unknown> {
     return {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
@@ -92,7 +92,7 @@ export interface ArticleInput {
     url: string;
 }
 
-export function articleSchema(article: ArticleInput, profileImageUrl: string) {
+export function articleSchema(article: ArticleInput, profileImageUrl: string): Record<string, unknown> {
     return {
         '@context': 'https://schema.org',
         '@type': 'Article',

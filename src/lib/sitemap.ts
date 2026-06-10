@@ -1,6 +1,6 @@
 import { SITE, SITE_PAGES, SITE_URL } from './site-content';
 
-function escapeXml(value: string) {
+function escapeXml(value: string): string {
     return value
         .replaceAll('&', '&amp;')
         .replaceAll('<', '&lt;')
@@ -9,7 +9,7 @@ function escapeXml(value: string) {
         .replaceAll("'", '&apos;');
 }
 
-export function buildSitemapXml(lastmod = SITE.lastUpdated) {
+export function buildSitemapXml(lastmod = SITE.lastUpdated): string {
     const urls = SITE_PAGES.map((page) => {
         const loc = new URL(page.path, SITE_URL).href;
         return [

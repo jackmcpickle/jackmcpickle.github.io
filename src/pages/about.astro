@@ -2,10 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import MacShell from '../components/MacShell.astro';
 import { organizationSchema, personSchema, faqPageSchema, FAQ_ITEMS } from '../lib/structured-data';
-import { ABOUT_PAGE } from '../lib/site-content';
+import { ABOUT_PAGE, SITE_URL } from '../lib/site-content';
 import { resolveProfileImage } from '../lib/profile-image';
 
-const profileImage = await resolveProfileImage(Astro.site!);
+const site = Astro.site ?? new URL(SITE_URL);
+const profileImage = await resolveProfileImage(site);
 const jsonLd = [
     organizationSchema(profileImage.url),
     personSchema(profileImage.url),

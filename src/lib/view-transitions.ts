@@ -1,4 +1,19 @@
-import type { TransitionAnimation } from 'astro:transitions';
+interface TransitionStep {
+    name: string;
+    duration: string;
+    easing: string;
+}
+
+interface TransitionAnimation {
+    forwards: {
+        old: TransitionStep;
+        new: TransitionStep;
+    };
+    backwards: {
+        old: TransitionStep;
+        new: TransitionStep;
+    };
+}
 
 const crtSwapSteps = {
     forwards: {

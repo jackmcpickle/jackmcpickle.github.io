@@ -21,19 +21,19 @@ interface SiteCollections {
     anime: CollectionEntry<'anime'>[];
 }
 
-function projectFocus(project: CollectionEntry<'projects'>) {
+function projectFocus(project: CollectionEntry<'projects'>): string {
     return project.data.tags.join(', ');
 }
 
-function formatTalk(talk: CollectionEntry<'talks'>) {
+function formatTalk(talk: CollectionEntry<'talks'>): string {
     return `${talk.data.title} — ${talk.data.event}, ${talk.data.date}`;
 }
 
-function formatFaq() {
+function formatFaq(): string {
     return FAQ_ITEMS.map((item) => `**${item.question}**\n${item.answer}`).join('\n\n');
 }
 
-export function buildLlmsTxt(collections?: SiteCollections) {
+export function buildLlmsTxt(collections?: SiteCollections): string {
     const lines = [
         `# ${SITE.name}`,
         '',
@@ -95,7 +95,7 @@ export function buildLlmsTxt(collections?: SiteCollections) {
     return `${lines.join('\n')}\n`;
 }
 
-export function buildLlmsFullTxt(collections: SiteCollections) {
+export function buildLlmsFullTxt(collections: SiteCollections): string {
     const projectRows = collections.projects
         .map(
             (project) =>
@@ -205,12 +205,12 @@ export function buildLlmsFullTxt(collections: SiteCollections) {
     return `${lines.join('\n')}\n`;
 }
 
-export async function generateLlmsTxt() {
+export async function generateLlmsTxt(): Promise<string> {
     const collections = await getAllSiteCollections();
     return buildLlmsTxt(collections);
 }
 
-export async function generateLlmsFullTxt() {
+export async function generateLlmsFullTxt(): Promise<string> {
     const collections = await getAllSiteCollections();
     return buildLlmsFullTxt(collections);
 }

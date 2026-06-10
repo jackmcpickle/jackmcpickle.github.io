@@ -3,7 +3,9 @@ import { getImage } from 'astro:assets';
 
 export { jackPhoto };
 
-export async function resolveProfileImage(site: URL | string) {
+export async function resolveProfileImage(
+    site: URL | string,
+): Promise<{ path: string; url: string }> {
     const optimized = await getImage({
         src: jackPhoto,
         width: 512,

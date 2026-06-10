@@ -9,6 +9,7 @@ export default defineConfig({
         'no-void': ['warn', { allowAsStatement: true }],
         'no-undefined': 'off',
         'import/no-default-export': 'off',
+        'import/no-relative-parent-imports': 'off',
         'import/max-dependencies': ['error', { max: 50 }],
         'import/no-unassigned-import': [
             'warn',
@@ -61,6 +62,12 @@ export default defineConfig({
             files: ['astro.config.mjs'],
             rules: {
                 'typescript/no-unsafe-assignment': 'off',
+            },
+        },
+        {
+            files: ['scripts/**'],
+            rules: {
+                'no-console': 'off',
             },
         },
     ],

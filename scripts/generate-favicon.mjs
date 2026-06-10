@@ -9,8 +9,8 @@ const svg = readFileSync(join(root, 'public/favicon.svg'));
 
 const sizes = [16, 32, 48];
 const pngs = await Promise.all(
-    sizes.map((size) => sharp(svg).resize(size, size).png().toBuffer()),
+    sizes.map(async (size) => sharp(svg).resize(size, size).png().toBuffer()),
 );
 
 writeFileSync(join(root, 'public/favicon.ico'), await pngToIco(pngs));
-console.log('Wrote public/favicon.ico');
+console.warn('Wrote public/favicon.ico');
