@@ -38,6 +38,12 @@ export default defineConfig({
                 "tabWidth": 2,
                 "singleQuote": false
             }
+        },
+        {
+            "files": ["*.astro"],
+            "options": {
+                "singleQuote": false
+            }
         }
     ],
     "sortPackageJson": true,

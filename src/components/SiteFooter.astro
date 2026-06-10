@@ -1,9 +1,16 @@
+---
+import { SITE } from '../lib/site-content';
+---
+
 <footer
-    class="shutdown pb-1 text-center font-display text-[15px] text-ink-soft"
-    data-screen-label="Footer"
+    class='shutdown pb-1 text-center font-display text-[15px] text-ink-soft'
+    data-screen-label='Footer'
 >
-    <p class="my-1">
-        <button class="sd-btn" id="shutdownbtn" type="button">Special ▸ Shut Down</button>
+    <p class='loc mb-4 text-xs text-ink-soft'>
+        Based in {SITE.location} · Working worldwide · Updated
+        <time datetime={SITE.lastUpdated}>{SITE.lastUpdatedLabel}</time>
     </p>
-    <p class="my-1">© 2026 jack mcpickle · It is now safe to switch off your Macintosh.</p>
+    <p class='my-1'>
+        © 2026 jack mcpickle · It is now safe to switch off your Macintosh.
+    </p>
 </footer>

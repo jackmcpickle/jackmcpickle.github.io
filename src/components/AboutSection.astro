@@ -5,36 +5,56 @@ import { HOME_PAGE, SITE } from '../lib/site-content';
 import { jackPhoto } from '../lib/profile-image';
 ---
 
-<MacWindow id="about" title="About This Developer" screenLabel="About window">
+<MacWindow
+    id='about'
+    title='About This Developer'
+    screenLabel='About window'
+>
     <article
-        class="grid grid-cols-[132px_1fr] items-center gap-6 @max-[470px]/crt:grid-cols-1 @max-[470px]/crt:justify-items-start"
+        class='grid grid-cols-[132px_1fr] items-start gap-6 @max-[470px]/crt:grid-cols-1 @max-[470px]/crt:justify-items-start'
     >
-        <div class="portrait">
+        <div class='portrait'>
             <Image
                 src={jackPhoto}
-                alt="Portrait of Jack McPickle"
+                alt='Portrait of Jack McPickle'
                 width={120}
                 height={120}
-                loading="eager"
-                decoding="async"
+                loading='eager'
+                decoding='async'
             />
-            <span class="portrait-fallback" aria-hidden="true">JM</span>
+            <span
+                class='portrait-fallback'
+                aria-hidden='true'
+                >JM</span
+            >
         </div>
-        <div class="hero-text">
-            <h1>jack mcpickle<span class="cursor"></span></h1>
-            <p class="role mb-3 font-display text-[17px] text-ink-soft">{SITE.role}</p>
-            <p class="lead mb-2.5 max-w-[58ch] text-[13.5px] leading-[1.45]">{HOME_PAGE.lead}</p>
-            <p class="bio mb-1.5 max-w-[52ch]">{HOME_PAGE.bio}</p>
-            <p class="loc mb-4 text-[12.5px] text-ink-soft">
-                Based in {SITE.location} · Working worldwide · Contact:
-                <a href={`mailto:${SITE.email}`}>{SITE.email}</a> · Updated
-                <time datetime={SITE.lastUpdated}>{SITE.lastUpdatedLabel}</time>
+        <div class='hero-text'>
+            <h1>jack mcpickle<span class='cursor'></span></h1>
+            <p class='role mb-3 font-display text-[17px] text-ink-soft'>
+                {SITE.role}
             </p>
-            <div class="flex flex-wrap gap-2.5">
-                <a class="mac-btn primary" href={`mailto:${SITE.email}`}>Email Jack</a>
-                <a class="mac-btn" href="/about">Full bio</a>
-                <a class="mac-btn" href={SITE.github} target="_blank" rel="noreferrer">GitHub</a>
-                <a class="mac-btn" href={SITE.linkedin} target="_blank" rel="noreferrer"
+            <p class='lead mb-2.5 max-w-[58ch] text-sm leading-[1.45]'>
+                {HOME_PAGE.lead}
+            </p>
+            <p class='bio mb-1.5 text-sm max-w-[52ch]'>{HOME_PAGE.bio}</p>
+            <div class='flex flex-wrap gap-2.5'>
+                <a
+                    class='mac-btn primary'
+                    href={`mailto:${SITE.email}`}
+                    >Email Jack</a
+                >
+                <a
+                    class='mac-btn'
+                    href={SITE.github}
+                    target='_blank'
+                    rel='noreferrer'
+                    >GitHub</a
+                >
+                <a
+                    class='mac-btn'
+                    href={SITE.linkedin}
+                    target='_blank'
+                    rel='noreferrer'
                     >LinkedIn</a
                 >
             </div>

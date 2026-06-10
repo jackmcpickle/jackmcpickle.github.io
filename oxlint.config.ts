@@ -12,7 +12,7 @@ export default defineConfig({
         'import/max-dependencies': ['error', { max: 50 }],
         'import/no-unassigned-import': [
             'warn',
-            { allow: ['**/*.css', '**/*.svg'] },
+            { allow: ['**/*.css', '**/*.svg', '**/index.ts'] },
         ],
         'max-lines': ['warn', { max: 500 }],
         'max-lines-per-function': ['warn', { max: 500 }],
@@ -32,6 +32,7 @@ export default defineConfig({
                 checkThenables: true,
             },
         ],
+        'typescript/no-deprecated': 'error',
         'typescript/strict-boolean-expressions': 'off',
         'typescript/prefer-readonly-parameter-types': 'off',
         'typescript/explicit-module-boundary-types': [
@@ -41,7 +42,7 @@ export default defineConfig({
         'typescript/no-unsafe-type-assertion': 'off',
         'typescript/only-throw-error': 'off',
         'typescript/explicit-function-return-type': [
-            'warn',
+            'error',
             {
                 allowExpressions: true,
                 allowTypedFunctionExpressions: true,
@@ -55,6 +56,14 @@ export default defineConfig({
             },
         ],
     },
+    overrides: [
+        {
+            files: ['astro.config.mjs'],
+            rules: {
+                'typescript/no-unsafe-assignment': 'off',
+            },
+        },
+    ],
     categories: {
         perf: 'error',
         restriction: 'error',

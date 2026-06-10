@@ -11,6 +11,9 @@ trim_trailing_whitespace = true
 charset = utf-8
 quote_type = single
 
+[*.astro]
+quote_type = double
+
 [*.yaml,*.yml]
 indent_size = 2
 quote_type = double

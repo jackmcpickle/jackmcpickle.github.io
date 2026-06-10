@@ -4,16 +4,16 @@ Guidelines for AI coding agents working in this repository.
 
 ## Project Overview
 
-Personal portfolio site built with **Astro 5** and **Tailwind CSS 4**.
+Personal portfolio site built with **Astro 6** and **Tailwind CSS 4**.
 Single-page static site with content collections for project data.
 
 ## Tech Stack
 
-- **Framework**: Astro 5.x
-- **Styling**: Tailwind CSS 4.x (via Vite plugin)
+- **Framework**: Astro
+- **Styling**: Tailwind CSS 4.x (via Vite plugin) use for all styling. Dont use regular css.
 - **Package Manager**: pnpm
 - **Content**: Astro Content Collections with Zod schemas
-- **Deployment**: GitHub Pages (static)
+- **Deployment**: Cloudflare workers (static)
 
 ## Commands
 
@@ -114,14 +114,15 @@ const {
 Schema definition pattern:
 
 ```ts
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
 const projects = defineCollection({
     loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
     schema: z.object({
         name: z.string(),
-        url: z.string().url(),
+        url: z.url(),
         tags: z.array(z.string()),
         order: z.number(),
     }),
