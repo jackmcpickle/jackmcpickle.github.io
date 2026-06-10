@@ -38,3 +38,15 @@ export function showBootScreen(boot: HTMLElement | null): void {
         boot.classList.add('off');
     }, TIMINGS.bootDismissMs);
 }
+
+export function dismissBootIfSeen(boot: HTMLElement | null): void {
+    if (!boot) return;
+
+    try {
+        if (sessionStorage.getItem(STORAGE_KEYS.bootSeen)) {
+            boot.classList.add('off');
+        }
+    } catch {
+        boot.classList.add('off');
+    }
+}

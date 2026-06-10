@@ -1,15 +1,15 @@
 ---
-import { getSortedTalks } from '../lib/collections';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import MacShell from '../components/MacShell.astro';
+import { getSortedTalks } from '@/lib/collections';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import MacShell from '@/components/MacShell.astro';
 import {
     organizationSchema,
     websiteSchema,
     personSchema,
     articleSchema,
-} from '../lib/structured-data';
-import { HOME_PAGE, SITE_URL } from '../lib/site-content';
-import { resolveProfileImage } from '../lib/profile-image';
+} from '@/lib/structured-data';
+import { HOME_PAGE, SITE_URL } from '@/lib/site-content';
+import { resolveProfileImage } from '@/lib/profile-image';
 
 const talks = await getSortedTalks();
 const site = Astro.site ?? new URL(SITE_URL);

@@ -1,5 +1,5 @@
-import jackPhoto from '../assets/jack-photo.png';
 import { getImage } from 'astro:assets';
+import jackPhoto from '@/assets/jack-photo.png';
 
 export { jackPhoto };
 

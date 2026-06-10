@@ -30,7 +30,9 @@ function formatTalk(talk: CollectionEntry<'talks'>): string {
 }
 
 function formatFaq(): string {
-    return FAQ_ITEMS.map((item) => `**${item.question}**\n${item.answer}`).join('\n\n');
+    return FAQ_ITEMS.map((item) => `**${item.question}**\n${item.answer}`).join(
+        '\n\n',
+    );
 }
 
 export function buildLlmsTxt(collections?: SiteCollections): string {
@@ -83,7 +85,8 @@ export function buildLlmsTxt(collections?: SiteCollections): string {
             '## Recent apps',
             '',
             ...collections.apps.map(
-                (app) => `- [${app.data.name}](${app.data.url}): ${app.data.description}`,
+                (app) =>
+                    `- [${app.data.name}](${app.data.url}): ${app.data.description}`,
             ),
             '',
             '## Talks and workshops',
@@ -104,10 +107,15 @@ export function buildLlmsFullTxt(collections: SiteCollections): string {
         .join('\n');
 
     const appRows = collections.apps
-        .map((app) => `| ${app.data.name} | ${app.data.description} | ${app.data.url} |`)
+        .map(
+            (app) =>
+                `| ${app.data.name} | ${app.data.description} | ${app.data.url} |`,
+        )
         .join('\n');
 
-    const talkLines = collections.talks.map((talk) => `- ${formatTalk(talk)}`).join('\n');
+    const talkLines = collections.talks
+        .map((talk) => `- ${formatTalk(talk)}`)
+        .join('\n');
     const podcastLines = collections.listening
         .map((item) => `- ${item.data.title} — ${item.data.creator}`)
         .join('\n');

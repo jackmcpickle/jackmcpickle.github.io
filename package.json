@@ -6,6 +6,7 @@
         "type": "git",
         "url": "https://github.com/jackmcpickle/jackmcpickle.github.io/"
     },
+    "type": "module",
     "scripts": {
         "dev": "astro dev",
         "build": "astro build",

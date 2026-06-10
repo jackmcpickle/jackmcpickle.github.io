@@ -17,18 +17,33 @@ export function initAboutDialog(
         appleBtn?.focus();
     }
 
-    appleBtn?.addEventListener('click', openAbout);
-    aboutOk?.addEventListener('click', closeAbout);
+    if (appleBtn && appleBtn.dataset.aboutInit !== 'true') {
+        appleBtn.dataset.aboutInit = 'true';
+        appleBtn.addEventListener('click', openAbout);
+    }
 
-    aboutDialog?.addEventListener('click', (e: MouseEvent) => {
-        if (e.target === aboutDialog) closeAbout();
-    });
+    if (aboutOk && aboutOk.dataset.aboutInit !== 'true') {
+        aboutOk.dataset.aboutInit = 'true';
+        aboutOk.addEventListener('click', closeAbout);
+    }
 
-    document.addEventListener('keydown', (e: KeyboardEvent) => {
-        if (e.key === 'Escape' && aboutDialog && !aboutDialog.hidden) {
-            closeAbout();
-        }
-    });
+    if (aboutDialog && aboutDialog.dataset.aboutInit !== 'true') {
+        aboutDialog.dataset.aboutInit = 'true';
+        aboutDialog.addEventListener('click', (e: MouseEvent) => {
+            if (e.target === aboutDialog) closeAbout();
+        });
+    }
+
+    if (!document.documentElement.dataset.aboutEscapeInit) {
+        document.documentElement.dataset.aboutEscapeInit = 'true';
+        document.addEventListener('keydown', (e: KeyboardEvent) => {
+            const dialog = document.getElementById('aboutdialog');
+            if (e.key === 'Escape' && dialog && !dialog.hidden) {
+                dialog.hidden = true;
+                document.getElementById('applebtn')?.focus();
+            }
+        });
+    }
 
     return closeAbout;
 }

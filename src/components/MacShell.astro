@@ -12,7 +12,7 @@ import SiteFooter from './SiteFooter.astro';
 import BootScreen from './BootScreen.astro';
 import AboutDialog from './AboutDialog.astro';
 import MacChin from './MacChin.astro';
-import { crtSwap } from '../lib/view-transitions';
+import { crtSwap } from '@/lib/view-transitions';
 
 interface Props {
     page?: 'home' | 'about';
@@ -22,7 +22,7 @@ const { page = 'home' } = Astro.props;
 ---
 
 <div class="mac-shell grid h-full place-items-center px-2 py-[1.5dvh]">
-    <div class="mac" data-screen-label="Macintosh 128K" transition:persist="mac">
+    <div class="mac" data-screen-label="Macintosh 128K">
         <div class="bezel">
             <div class="crt">
                 <div class="crt-content" id="crt">
@@ -65,5 +65,5 @@ const { page = 'home' } = Astro.props;
 </div>
 
 <script>
-    import '../scripts/portfolio/index.ts';
+    import '@/scripts/portfolio/index.ts';
 </script>

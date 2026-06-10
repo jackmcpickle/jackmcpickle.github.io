@@ -1,7 +1,7 @@
+import type { AboutDialogClose } from './about-dialog';
 import { onceOnEnd } from './animation';
 import { showBootScreen } from './boot';
 import { TIMINGS } from './constants';
-import type { AboutDialogClose } from './about-dialog';
 
 export function initPowerControls(
     mac: HTMLElement | null,
@@ -63,10 +63,16 @@ export function initPowerControls(
         showBootScreen(boot);
     }
 
-    powerBtn?.addEventListener('click', () => {
-        if (isOff()) powerOn();
-        else shutDown();
-    });
+    if (powerBtn && powerBtn.dataset.powerInit !== 'true') {
+        powerBtn.dataset.powerInit = 'true';
+        powerBtn.addEventListener('click', () => {
+            if (isOff()) powerOn();
+            else shutDown();
+        });
+    }
 
-    shutdownBtn?.addEventListener('click', shutDown);
+    if (shutdownBtn && shutdownBtn.dataset.powerInit !== 'true') {
+        shutdownBtn.dataset.powerInit = 'true';
+        shutdownBtn.addEventListener('click', shutDown);
+    }
 }

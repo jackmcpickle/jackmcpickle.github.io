@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { buildSitemapXml } from '../lib/sitemap';
+import { buildSitemapXml } from '@/lib/sitemap';
 
 export const GET: APIRoute = () => {
     const body = buildSitemapXml();

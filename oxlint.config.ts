@@ -9,7 +9,6 @@ export default defineConfig({
         'no-void': ['warn', { allowAsStatement: true }],
         'no-undefined': 'off',
         'import/no-default-export': 'off',
-        'import/no-relative-parent-imports': 'off',
         'import/max-dependencies': ['error', { max: 50 }],
         'import/no-unassigned-import': [
             'warn',

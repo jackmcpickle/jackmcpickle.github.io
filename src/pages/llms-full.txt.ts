@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { generateLlmsFullTxt } from '../lib/llms';
+import { generateLlmsFullTxt } from '@/lib/llms';
 
 export const GET: APIRoute = async () => {
     const body = await generateLlmsFullTxt();

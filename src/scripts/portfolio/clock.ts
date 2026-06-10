@@ -22,9 +22,16 @@ export function formatTime(date: Date, use24h: boolean): string {
     return `${h12}:${mStr} ${ap}`;
 }
 
+let clockInterval: ReturnType<typeof setInterval> | null = null;
+
 export function initMenuClock(clock: HTMLElement | null): void {
     if (!clock) return;
     const clockEl = clock;
+
+    if (clockInterval) {
+        clearInterval(clockInterval);
+        clockInterval = null;
+    }
 
     let clock24h = readStorage(localStorage, STORAGE_KEYS.clock24h) === '1';
 
@@ -35,14 +42,10 @@ export function initMenuClock(clock: HTMLElement | null): void {
 
     clockEl.addEventListener('click', () => {
         clock24h = !clock24h;
-        writeStorage(
-            localStorage,
-            STORAGE_KEYS.clock24h,
-            clock24h ? '1' : '0',
-        );
+        writeStorage(localStorage, STORAGE_KEYS.clock24h, clock24h ? '1' : '0');
         tick();
     });
 
     tick();
-    setInterval(tick, TIMINGS.clockTickMs);
+    clockInterval = setInterval(tick, TIMINGS.clockTickMs);
 }

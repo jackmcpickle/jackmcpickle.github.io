@@ -16,8 +16,7 @@ export function initZoomableWindows(
         return;
     }
 
-    const vh =
-        window.innerHeight || document.documentElement.clientHeight;
+    const vh = window.innerHeight || document.documentElement.clientHeight;
     let delay = 0;
 
     for (const w of windows) {

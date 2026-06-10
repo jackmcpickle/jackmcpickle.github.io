@@ -1,5 +1,5 @@
-import { TIMINGS } from './constants';
 import { onceOnEnd } from './animation';
+import { TIMINGS } from './constants';
 
 function setupWindowShade(win: HTMLElement): void {
     if (win.dataset.shadeInit === 'true') return;

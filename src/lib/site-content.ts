@@ -51,18 +51,25 @@ export const SERVICES_DETAILED = [
         description:
             'Workflow design, agent architecture, and production patterns with Claude and modern AI tooling',
     },
-    { title: 'Consulting', description: 'Product strategy, technical audits, and architecture reviews' },
+    {
+        title: 'Consulting',
+        description:
+            'Product strategy, technical audits, and architecture reviews',
+    },
     {
         title: 'Development',
-        description: 'Hands-on builds for agents, web apps, e-commerce, and internal tools',
+        description:
+            'Hands-on builds for agents, web apps, e-commerce, and internal tools',
     },
     {
         title: 'Instruction',
-        description: 'Workshops and 1:1 mentoring on AI product delivery, frontend, and platform design',
+        description:
+            'Workshops and 1:1 mentoring on AI product delivery, frontend, and platform design',
     },
     {
         title: 'Migrations',
-        description: 'Moving legacy stores and CMS sites to modern stacks (Next.js, headless)',
+        description:
+            'Moving legacy stores and CMS sites to modern stacks (Next.js, headless)',
     },
 ] as const;
 
@@ -108,13 +115,37 @@ export const SITE_PAGES = [
 ] as const;
 
 export const SECTION_LINKS = [
-    { id: 'work', label: 'Selected work', description: 'Client projects across e-commerce and platforms' },
-    { id: 'apps', label: 'Recent apps', description: 'AI tools, agents, and products Jack has shipped' },
-    { id: 'talks', label: 'Talks and workshops', description: 'Conference and meetup sessions' },
+    {
+        id: 'work',
+        label: 'Selected work',
+        description: 'Client projects across e-commerce and platforms',
+    },
+    {
+        id: 'apps',
+        label: 'Recent apps',
+        description: 'AI tools, agents, and products Jack has shipped',
+    },
+    {
+        id: 'talks',
+        label: 'Talks and workshops',
+        description: 'Conference and meetup sessions',
+    },
 ] as const;
 
 export const ABOUT_SECTION_LINKS = [
-    { id: 'podcasts', label: 'Podcasts', description: 'Shows on rotation between builds' },
-    { id: 'manga', label: 'Manga', description: 'Currently reading — caught up to latest chapters' },
-    { id: 'faq', label: 'FAQ', description: 'Common questions about working with Jack' },
+    {
+        id: 'podcasts',
+        label: 'Podcasts',
+        description: 'Shows on rotation between builds',
+    },
+    {
+        id: 'manga',
+        label: 'Manga',
+        description: 'Currently reading — caught up to latest chapters',
+    },
+    {
+        id: 'faq',
+        label: 'FAQ',
+        description: 'Common questions about working with Jack',
+    },
 ] as const;
