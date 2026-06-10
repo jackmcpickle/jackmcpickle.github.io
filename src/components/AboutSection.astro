@@ -61,12 +61,3 @@ import { jackPhoto } from '../lib/profile-image';
         </div>
     </article>
 </MacWindow>
-
-<script>
-    const portrait = document.querySelector<HTMLImageElement>('.portrait img');
-    portrait?.addEventListener('error', () => {
-        if (!portrait) return;
-        portrait.style.display = 'none';
-        portrait.parentElement?.classList.add('no-photo');
-    });
-</script>

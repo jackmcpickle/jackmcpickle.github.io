@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import MacWindow from './MacWindow.astro';
+import { ABOUT_PAGE, SERVICES, SITE, TECHNOLOGIES } from '../lib/site-content';
+import { jackPhoto } from '../lib/profile-image';
+---
+
+<MacWindow
+    id="about"
+    title="Bio"
+    note="Background, services, and how to get in touch."
+    screenLabel="Bio window"
+>
+    <article
+        class="grid grid-cols-[132px_1fr] items-start gap-6 @max-[470px]/crt:grid-cols-1 @max-[470px]/crt:justify-items-start"
+    >
+        <div class="portrait">
+            <Image
+                src={jackPhoto}
+                alt="Portrait of Jack McPickle"
+                width={120}
+                height={120}
+                loading="eager"
+                decoding="async"
+            />
+            <span class="portrait-fallback" aria-hidden="true">JM</span>
+        </div>
+        <div class="hero-text">
+            <h1>{ABOUT_PAGE.heading}</h1>
+            <p class="role mb-3 font-display text-[17px] text-ink-soft">{SITE.role}</p>
+            <p class="lead mb-2.5 max-w-[58ch] text-sm leading-[1.45]">{ABOUT_PAGE.lead}</p>
+            <p class="bio mb-4 text-sm max-w-[58ch]">{ABOUT_PAGE.whatJackDoes}</p>
+
+            <section class="mb-4">
+                <h3 class="mb-1.5 font-display text-[15px]">Services</h3>
+                <ul class="list-inside list-disc text-sm leading-[1.45]">
+                    {SERVICES.map((service) => (
+                        <li>{service}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <section class="mb-4">
+                <h3 class="mb-1.5 font-display text-[15px]">Technologies</h3>
+                <p class="text-sm leading-[1.45]">{TECHNOLOGIES}</p>
+            </section>
+
+            <section class="mb-4">
+                <h3 class="mb-1.5 font-display text-[15px]">Contact</h3>
+                <p class="text-sm leading-[1.45]">
+                    Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> to discuss your project.
+                    Connect on
+                    <a href={SITE.github} target="_blank" rel="noreferrer">GitHub</a>
+                    or
+                    <a href={SITE.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>.
+                </p>
+            </section>
+
+            <div class="flex flex-wrap gap-2.5">
+                <a class="mac-btn primary" href={`mailto:${SITE.email}`}>Email Jack</a>
+                <a class="mac-btn" href={SITE.github} target="_blank" rel="noreferrer">GitHub</a>
+                <a class="mac-btn" href={SITE.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </article>
+</MacWindow>

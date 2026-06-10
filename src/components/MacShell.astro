@@ -1,6 +1,7 @@
 ---
 import MenuBar from './MenuBar.astro';
 import AboutSection from './AboutSection.astro';
+import AboutPageSection from './AboutPageSection.astro';
 import AppList from './AppList.astro';
 import ProjectList from './ProjectList.astro';
 import TalkList from './TalkList.astro';
@@ -11,24 +12,41 @@ import SiteFooter from './SiteFooter.astro';
 import BootScreen from './BootScreen.astro';
 import AboutDialog from './AboutDialog.astro';
 import MacChin from './MacChin.astro';
+import { crtSwap } from '../lib/view-transitions';
+
+interface Props {
+    page?: 'home' | 'about';
+}
+
+const { page = 'home' } = Astro.props;
 ---
 
 <div class="mac-shell grid h-full place-items-center px-2 py-[1.5dvh]">
-    <div class="mac" data-screen-label="Macintosh 128K">
+    <div class="mac" data-screen-label="Macintosh 128K" transition:persist="mac">
         <div class="bezel">
             <div class="crt">
                 <div class="crt-content" id="crt">
                     <MenuBar />
                     <main
+                        transition:name="crt-main"
+                        transition:animate={crtSwap}
                         class="mx-auto flex max-w-[880px] flex-col gap-11 px-[clamp(14px,3cqw,24px)] pb-14 pt-9"
                     >
-                        <AboutSection />
-                        <AppList />
-                        <ProjectList />
-                        <TalkList />
-                        <ListeningList />
-                        <AnimeList />
-                        <FaqSection />
+                        {page === 'home' ? (
+                            <>
+                                <AboutSection />
+                                <AppList />
+                                <ProjectList />
+                                <TalkList />
+                            </>
+                        ) : (
+                            <>
+                                <AboutPageSection />
+                                <ListeningList />
+                                <AnimeList />
+                                <FaqSection />
+                            </>
+                        )}
                         <SiteFooter />
                     </main>
                 </div>

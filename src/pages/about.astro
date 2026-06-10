@@ -1,11 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { organizationSchema, personSchema } from '../lib/structured-data';
-import { ABOUT_PAGE, SERVICES, SITE, TECHNOLOGIES } from '../lib/site-content';
+import MacShell from '../components/MacShell.astro';
+import { organizationSchema, personSchema, faqPageSchema, FAQ_ITEMS } from '../lib/structured-data';
+import { ABOUT_PAGE } from '../lib/site-content';
 import { resolveProfileImage } from '../lib/profile-image';
 
 const profileImage = await resolveProfileImage(Astro.site!);
-const jsonLd = [organizationSchema(profileImage.url), personSchema(profileImage.url)];
+const jsonLd = [
+    organizationSchema(profileImage.url),
+    personSchema(profileImage.url),
+    faqPageSchema(FAQ_ITEMS),
+];
 ---
 
 <BaseLayout
@@ -14,59 +19,5 @@ const jsonLd = [organizationSchema(profileImage.url), personSchema(profileImage.
     ogImage={profileImage.path}
     jsonLd={jsonLd}
 >
-    <main
-        class="mx-auto max-w-2xl px-6 py-8 pb-16 font-sans leading-relaxed text-ink"
-    >
-        <nav class="mb-8 flex flex-wrap gap-4 text-[0.95rem]" aria-label="Site navigation">
-            <a class="text-blue-600" href="/">← Back to portfolio</a>
-            <a class="text-blue-600" href="/#work">Selected work</a>
-            <a class="text-blue-600" href="/#apps">Apps</a>
-            <a class="text-blue-600" href="/#talks">Talks</a>
-            <a class="text-blue-600" href="/#faq">FAQ</a>
-        </nav>
-
-        <article>
-            <header>
-                <h1 class="mb-3 text-[2rem]">{ABOUT_PAGE.heading}</h1>
-                <p class="mb-2 text-lg">{ABOUT_PAGE.lead}</p>
-                <p class="mb-8 text-[0.9rem] text-neutral-500">
-                    Last updated: <time datetime={SITE.lastUpdated}>{SITE.lastUpdatedLabel}</time>
-                </p>
-            </header>
-
-            <section class="mt-7">
-                <h2 class="mb-2 text-xl">What Jack does</h2>
-                <p>{ABOUT_PAGE.whatJackDoes}</p>
-            </section>
-
-            <section class="mt-7">
-                <h2 class="mb-2 text-xl">Services</h2>
-                <ul>
-                    {SERVICES.map((service) => (
-                        <li>{service}</li>
-                    ))}
-                </ul>
-            </section>
-
-            <section class="mt-7">
-                <h2 class="mb-2 text-xl">Technologies</h2>
-                <p>{TECHNOLOGIES}</p>
-            </section>
-
-            <section class="mt-7">
-                <h2 class="mb-2 text-xl">Contact</h2>
-                <p>
-                    Email <a class="text-blue-600" href={`mailto:${SITE.email}`}>{SITE.email}</a> to
-                    discuss your project. Connect on
-                    <a class="text-blue-600" href={SITE.github} target="_blank" rel="noreferrer"
-                        >GitHub</a
-                    >
-                    or
-                    <a class="text-blue-600" href={SITE.linkedin} target="_blank" rel="noreferrer"
-                        >LinkedIn</a
-                    >.
-                </p>
-            </section>
-        </article>
-    </main>
+    <MacShell page="about" />
 </BaseLayout>

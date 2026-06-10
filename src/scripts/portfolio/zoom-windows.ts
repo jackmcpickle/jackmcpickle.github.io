@@ -9,8 +9,9 @@ function openAll(windows: HTMLElement[]): void {
 export function initZoomableWindows(
     windows: HTMLElement[],
     reducedMotion: boolean,
+    instant = false,
 ): void {
-    if (reducedMotion || !('IntersectionObserver' in window)) {
+    if (reducedMotion || instant || !('IntersectionObserver' in window)) {
         openAll(windows);
         return;
     }

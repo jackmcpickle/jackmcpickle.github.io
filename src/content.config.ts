@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod'
 import { glob } from 'astro/loaders';
 
 const projects = defineCollection({
@@ -16,8 +17,8 @@ const apps = defineCollection({
     schema: z.object({
         name: z.string(),
         description: z.string(),
-        url: z.string().url(),
-        github: z.string().url().optional(),
+        url: z.url(),
+        github: z.url().optional(),
         tags: z.array(z.string()),
         order: z.number(),
     }),
@@ -29,7 +30,7 @@ const listening = defineCollection({
         title: z.string(),
         creator: z.string(),
         description: z.string().optional(),
-        url: z.string().url(),
+        url: z.url(),
         tags: z.array(z.string()),
         order: z.number(),
     }),
@@ -41,7 +42,7 @@ const talks = defineCollection({
         title: z.string(),
         event: z.string(),
         date: z.string(),
-        url: z.string().url(),
+        url: z.url(),
         tags: z.array(z.string()),
         order: z.number(),
     }),

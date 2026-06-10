@@ -2,6 +2,7 @@ import type { CollectionEntry } from 'astro:content';
 import { getAllSiteCollections } from './collections';
 import {
     ABOUT_PAGE,
+    ABOUT_SECTION_LINKS,
     FAQ_ITEMS,
     HOME_PAGE,
     SECTION_LINKS,
@@ -40,8 +41,8 @@ export function buildLlmsTxt(collections?: SiteCollections) {
         '',
         '## About',
         '',
-        `- [About ${SITE.name}](${SITE_URL}/about): Background, services, and contact details`,
-        `- [Portfolio home](${SITE_URL}/): Selected work, apps, talks, and FAQs`,
+        `- [Bio — ${SITE.name}](${SITE_URL}/about): Background, services, podcasts, manga, and FAQ`,
+        `- [Portfolio home](${SITE_URL}/): Selected work, apps, and talks`,
         '',
         '## Services',
         '',
@@ -58,6 +59,10 @@ export function buildLlmsTxt(collections?: SiteCollections) {
         ...SECTION_LINKS.map(
             (section) =>
                 `- [${section.label}](${SITE_URL}/#${section.id}): ${section.description}`,
+        ),
+        ...ABOUT_SECTION_LINKS.map(
+            (section) =>
+                `- [${section.label}](${SITE_URL}/about#${section.id}): ${section.description}`,
         ),
         '',
         '## Technologies',
@@ -191,8 +196,8 @@ export function buildLlmsFullTxt(collections: SiteCollections) {
         '',
         '## Site structure',
         '',
-        `- \`/\` — Portfolio home with work, apps, talks, podcasts, and FAQ`,
-        `- \`/about\` — Extended bio, services, and contact information`,
+        `- \`/\` — Portfolio home with work, apps, and talks`,
+        `- \`/about\` — Bio page with services, podcasts, manga, and FAQ`,
         `- \`/llms.txt\` — Concise LLM-oriented site summary`,
         `- \`/llms-full.txt\` — This file; comprehensive site content for AI systems`,
     ];

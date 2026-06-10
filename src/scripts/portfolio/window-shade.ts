@@ -2,12 +2,15 @@ import { TIMINGS } from './constants';
 import { onceOnEnd } from './animation';
 
 function setupWindowShade(win: HTMLElement): void {
+    if (win.dataset.shadeInit === 'true') return;
+
     const bar = win.querySelector<HTMLElement>('.titlebar');
     const body = win.querySelector<HTMLElement>('.window-body');
     if (!bar || !body) return;
     const titlebar = bar;
     const windowBody = body;
 
+    win.dataset.shadeInit = 'true';
     titlebar.setAttribute('role', 'button');
     titlebar.setAttribute('tabindex', '0');
     titlebar.setAttribute('aria-expanded', 'true');

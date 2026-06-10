@@ -26,10 +26,10 @@ export const HOME_PAGE = {
 } as const;
 
 export const ABOUT_PAGE = {
-    title: 'About Jack McPickle — AI Engineer & Tech Leader',
+    title: 'Bio — Jack McPickle · AI Engineer & Tech Leader',
     description:
         'Learn about Jack McPickle, an Australian consultant and developer who mentors founders on AI workflows and agents, contributes to the Claude community, and delivers e-commerce and platform work at scale.',
-    heading: 'About Jack McPickle',
+    heading: 'Jack McPickle',
     lead: 'Jack McPickle is a consultant, instructor, and developer based in Australia. He helps founders and teams build with AI—from practical workflows to production agents—and mentors technical and non-technical leaders through strategy, implementation, and delivery.',
     whatJackDoes:
         'Jack blends AI product strategy with hands-on engineering. He mentors founders—technical and non-technical—on where AI fits, how to design reliable workflows, and when to graduate from prompts to full agents. He is active in the Claude developer community, building skills, tools, and agent patterns that teams can ship. Alongside that work, he continues helping startups and brands on platform design, e-commerce delivery, and engineering coaching.',
@@ -111,5 +111,10 @@ export const SECTION_LINKS = [
     { id: 'work', label: 'Selected work', description: 'Client projects across e-commerce and platforms' },
     { id: 'apps', label: 'Recent apps', description: 'AI tools, agents, and products Jack has shipped' },
     { id: 'talks', label: 'Talks and workshops', description: 'Conference and meetup sessions' },
+] as const;
+
+export const ABOUT_SECTION_LINKS = [
+    { id: 'podcasts', label: 'Podcasts', description: 'Shows on rotation between builds' },
+    { id: 'manga', label: 'Manga', description: 'Currently reading — caught up to latest chapters' },
     { id: 'faq', label: 'FAQ', description: 'Common questions about working with Jack' },
 ] as const;

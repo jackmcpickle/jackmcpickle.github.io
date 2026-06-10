@@ -909,6 +909,36 @@ a {
     font-size: 15px;
 }
 
+@keyframes crtSwapOut {
+    to {
+        opacity: 0;
+        filter: brightness(1.35);
+    }
+}
+@keyframes crtSwapIn {
+    from {
+        opacity: 0;
+        filter: brightness(1.25);
+    }
+    to {
+        opacity: 1;
+        filter: brightness(1);
+    }
+}
+
+::view-transition-old(crt-main) {
+    animation: crtSwapOut 0.18s steps(4, end) both;
+}
+::view-transition-new(crt-main) {
+    animation: crtSwapIn 0.22s steps(5, end) both;
+}
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(crt-main),
+    ::view-transition-new(crt-main) {
+        animation: none;
+    }
+}
+
 /* ---------- Boot screen (inside the CRT) ---------- */
 .boot {
     position: absolute;

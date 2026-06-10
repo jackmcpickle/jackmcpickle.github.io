@@ -2,10 +2,9 @@
 import { initAboutDialog } from './about-dialog';
 import { initBootScreen } from './boot';
 import { initMenuClock } from './clock';
-import { getById, queryAll } from './dom';
+import { getById } from './dom';
+import { initPageContent, resetCrtScroll } from './page-content';
 import { initPowerControls } from './power';
-import { initWindowShades } from './window-shade';
-import { initZoomableWindows } from './zoom-windows';
 
 const reducedMotion = window.matchMedia(
     '(prefers-reduced-motion: reduce)',
@@ -20,8 +19,7 @@ const closeAbout = initAboutDialog(
 
 initBootScreen(boot, reducedMotion);
 initMenuClock(getById('menuclock'));
-initZoomableWindows(queryAll('.window.zoomable'), reducedMotion);
-initWindowShades(queryAll('.window'));
+initPageContent(false);
 initPowerControls(
     document.querySelector('.mac'),
     document.querySelector('.crt-content'),
@@ -31,3 +29,8 @@ initPowerControls(
     closeAbout,
     reducedMotion,
 );
+
+document.addEventListener('astro:page-load', () => {
+    resetCrtScroll();
+    initPageContent(true);
+});

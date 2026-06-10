@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
     title?: string;
@@ -56,6 +57,7 @@ const structuredData = jsonLd.filter(Boolean);
                 <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
             ))
         }
+        <ClientRouter />
     </head>
     <body>
         <slot />
