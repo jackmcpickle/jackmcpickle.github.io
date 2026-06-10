@@ -17,12 +17,12 @@ interface TransitionAnimation {
 
 const crtSwapSteps = {
     forwards: {
-        old: { name: 'crtSwapOut', duration: '0.18s', easing: 'steps(4, end)' },
-        new: { name: 'crtSwapIn', duration: '0.22s', easing: 'steps(5, end)' },
+        old: { name: 'crtSwapOut', duration: '0.16s', easing: 'steps(3, end)' },
+        new: { name: 'crtSwapIn', duration: '0.2s', easing: 'steps(4, end)' },
     },
     backwards: {
-        old: { name: 'crtSwapOut', duration: '0.18s', easing: 'steps(4, end)' },
-        new: { name: 'crtSwapIn', duration: '0.22s', easing: 'steps(5, end)' },
+        old: { name: 'crtSwapOut', duration: '0.16s', easing: 'steps(3, end)' },
+        new: { name: 'crtSwapIn', duration: '0.2s', easing: 'steps(4, end)' },
     },
 } satisfies TransitionAnimation;
 

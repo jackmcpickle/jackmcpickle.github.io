@@ -25,34 +25,39 @@ const { page = 'home' } = Astro.props;
     <div class="mac" data-screen-label="Macintosh 128K">
         <div class="bezel">
             <div class="crt">
-                <div class="crt-content" id="crt">
-                    <MenuBar />
-                    <main
-                        transition:name="crt-main"
-                        transition:animate={crtSwap}
-                        class="mx-auto flex max-w-[880px] flex-col gap-11 px-[clamp(14px,3cqw,24px)] pb-14 pt-9"
-                    >
-                        {page === 'home' ? (
-                            <>
-                                <AboutSection />
-                                <AppList />
-                                <ProjectList />
-                                <TalkList />
-                            </>
-                        ) : (
-                            <>
-                                <AboutPageSection />
-                                <ListeningList />
-                                <AnimeList />
-                                <FaqSection />
-                            </>
-                        )}
-                        <SiteFooter />
-                    </main>
-                </div>
+                <div class="crt-bounds-probe" aria-hidden="true"></div>
+                <div
+                    class="crt-swap"
+                    transition:name="crt-main"
+                    transition:animate={crtSwap}
+                >
+                    <div class="crt-content" id="crt">
+                        <MenuBar />
+                        <main
+                            class="mx-auto flex max-w-[880px] flex-col gap-11 px-[clamp(14px,3cqw,24px)] pb-14 pt-9"
+                        >
+                            {page === 'home' ? (
+                                <>
+                                    <AboutSection />
+                                    <AppList />
+                                    <ProjectList />
+                                    <TalkList />
+                                </>
+                            ) : (
+                                <>
+                                    <AboutPageSection />
+                                    <ListeningList />
+                                    <AnimeList />
+                                    <FaqSection />
+                                </>
+                            )}
+                            <SiteFooter />
+                        </main>
+                    </div>
 
-                <AboutDialog />
-                <BootScreen />
+                    <AboutDialog />
+                    <BootScreen />
+                </div>
 
                 <div class="scanlines" aria-hidden="true"></div>
                 <div class="crt-vignette" aria-hidden="true"></div>
