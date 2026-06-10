@@ -1,5 +1,5 @@
 ---
 title: Snake Immortal
 chapter: CH 89
-order: 7
+order: 10
 ---

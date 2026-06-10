@@ -1,5 +1,5 @@
 ---
 title: Onepunch-Man
 chapter: CH 216
-order: 9
+order: 5
 ---

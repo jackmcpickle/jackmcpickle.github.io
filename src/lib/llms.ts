@@ -80,6 +80,10 @@ export function buildLlmsTxt(collections?: SiteCollections) {
             ...collections.apps.map(
                 (app) => `- [${app.data.name}](${app.data.url}): ${app.data.description}`,
             ),
+            '',
+            '## Talks and workshops',
+            '',
+            ...collections.talks.map((talk) => `- ${formatTalk(talk)}`),
         );
     }
 
