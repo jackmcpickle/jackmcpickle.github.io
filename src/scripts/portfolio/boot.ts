@@ -2,7 +2,7 @@ import { STORAGE_KEYS, TIMINGS } from './constants';
 import { writeStorage } from './storage';
 
 function isBootEnabled(): boolean {
-    return window.__bootEnabled !== false;
+    return window['__bootEnabled'] !== false;
 }
 
 export function initBootScreen(
@@ -34,5 +34,7 @@ export function initBootScreen(
 export function showBootScreen(boot: HTMLElement | null): void {
     if (!boot || !isBootEnabled()) return;
     boot.classList.remove('off');
-    setTimeout(() => boot.classList.add('off'), TIMINGS.bootDismissMs);
+    setTimeout(() => {
+        boot.classList.add('off');
+    }, TIMINGS.bootDismissMs);
 }

@@ -14,7 +14,8 @@
         "fmt": "oxfmt",
         "fmt:check": "oxfmt --check",
         "lint": "oxlint --type-aware --type-check",
-        "lint:fix": "oxlint --type-aware --type-check --fix"
+        "lint:fix": "oxlint --type-aware --type-check --fix",
+        "favicon": "node scripts/generate-favicon.mjs"
     },
     "dependencies": {
         "@astrojs/check": "^0.9.9",
@@ -28,6 +29,8 @@
         "oxfmt": "^0.54.0",
         "oxlint": "^1.69.0",
         "oxlint-tsgolint": "^0.23.0",
+        "png-to-ico": "^3.0.1",
+        "sharp": "^0.34.5",
         "tailwindcss": "4.1.18",
         "wrangler": "^4.99.0"
     },

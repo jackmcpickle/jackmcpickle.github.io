@@ -3,13 +3,14 @@ import { FAQ_ITEMS, HOME_PAGE, SITE, SITE_URL } from './site-content';
 export { FAQ_ITEMS };
 export type { FaqItem } from './site-content';
 
-export const organizationSchema = {
+export function organizationSchema(profileImageUrl: string) {
+    return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: SITE.name,
     alternateName: SITE.alternateName,
     url: SITE_URL,
-    logo: `${SITE_URL}${SITE.profileImage}`,
+    logo: profileImageUrl,
     email: SITE.email,
     description: HOME_PAGE.summary,
     sameAs: [SITE.github, SITE.linkedin],
@@ -21,7 +22,8 @@ export const organizationSchema = {
         url: `${SITE_URL}/about`,
         sameAs: [SITE.github, SITE.linkedin],
     },
-};
+    };
+}
 
 export const websiteSchema = {
     '@context': 'https://schema.org',
@@ -37,7 +39,8 @@ export const websiteSchema = {
     inLanguage: 'en-AU',
 };
 
-export const personSchema = {
+export function personSchema(profileImageUrl: string) {
+    return {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: SITE.name,
@@ -46,7 +49,7 @@ export const personSchema = {
     jobTitle: SITE.role,
     url: `${SITE_URL}/about`,
     email: SITE.email,
-    image: `${SITE_URL}${SITE.profileImage}`,
+    image: profileImageUrl,
     worksFor: {
         '@type': 'Organization',
         name: SITE.name,
@@ -64,7 +67,8 @@ export const personSchema = {
         'WordPress',
         'Team mentoring',
     ],
-};
+    };
+}
 
 export function faqPageSchema(items: typeof FAQ_ITEMS) {
     return {
@@ -88,7 +92,7 @@ export interface ArticleInput {
     url: string;
 }
 
-export function articleSchema(article: ArticleInput) {
+export function articleSchema(article: ArticleInput, profileImageUrl: string) {
     return {
         '@context': 'https://schema.org',
         '@type': 'Article',
@@ -105,7 +109,7 @@ export function articleSchema(article: ArticleInput) {
             url: SITE_URL,
             logo: {
                 '@type': 'ImageObject',
-                url: `${SITE_URL}${SITE.profileImage}`,
+                url: profileImageUrl,
             },
         },
         datePublished: article.date.length === 7 ? `${article.date}-01` : article.date,

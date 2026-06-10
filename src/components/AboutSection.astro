@@ -1,8 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import MacWindow from './MacWindow.astro';
 import { HOME_PAGE, SITE } from '../lib/site-content';
-
-const profileImage = SITE.profileImage;
+import { jackPhoto } from '../lib/profile-image';
 ---
 
 <MacWindow id="about" title="About This Developer" screenLabel="About window">
@@ -10,9 +10,11 @@ const profileImage = SITE.profileImage;
         class="grid grid-cols-[132px_1fr] items-center gap-6 @max-[470px]/crt:grid-cols-1 @max-[470px]/crt:justify-items-start"
     >
         <div class="portrait">
-            <img
-                src={profileImage}
+            <Image
+                src={jackPhoto}
                 alt="Portrait of Jack McPickle"
+                width={120}
+                height={120}
                 loading="eager"
                 decoding="async"
             />

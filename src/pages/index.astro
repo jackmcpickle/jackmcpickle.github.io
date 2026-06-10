@@ -11,18 +11,25 @@ import {
     FAQ_ITEMS,
 } from '../lib/structured-data';
 import { HOME_PAGE } from '../lib/site-content';
+import { resolveProfileImage } from '../lib/profile-image';
 
 const talks = await getSortedTalks();
+const profileImage = await resolveProfileImage(Astro.site!);
 
 const jsonLd = [
-    organizationSchema,
+    organizationSchema(profileImage.url),
     websiteSchema,
-    personSchema,
+    personSchema(profileImage.url),
     faqPageSchema(FAQ_ITEMS),
-    ...talks.map((talk) => articleSchema(talk.data)),
+    ...talks.map((talk) => articleSchema(talk.data, profileImage.url)),
 ];
 ---
 
-<BaseLayout title={HOME_PAGE.title} description={HOME_PAGE.description} jsonLd={jsonLd}>
+<BaseLayout
+    title={HOME_PAGE.title}
+    description={HOME_PAGE.description}
+    ogImage={profileImage.path}
+    jsonLd={jsonLd}
+>
     <MacShell />
 </BaseLayout>

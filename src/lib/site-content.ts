@@ -13,7 +13,6 @@ export const SITE = {
     lastUpdatedLabel: '10 June 2026',
     github: 'https://github.com/jackmcpickle',
     linkedin: 'https://www.linkedin.com/in/jackmcpickle/',
-    profileImage: '/images/profile-pic-jack.jpg',
 } as const;
 
 export const HOME_PAGE = {

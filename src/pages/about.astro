@@ -2,11 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { organizationSchema, personSchema } from '../lib/structured-data';
 import { ABOUT_PAGE, SERVICES, SITE, TECHNOLOGIES } from '../lib/site-content';
+import { resolveProfileImage } from '../lib/profile-image';
 
-const jsonLd = [organizationSchema, personSchema];
+const profileImage = await resolveProfileImage(Astro.site!);
+const jsonLd = [organizationSchema(profileImage.url), personSchema(profileImage.url)];
 ---
 
-<BaseLayout title={ABOUT_PAGE.title} description={ABOUT_PAGE.description} jsonLd={jsonLd}>
+<BaseLayout
+    title={ABOUT_PAGE.title}
+    description={ABOUT_PAGE.description}
+    ogImage={profileImage.path}
+    jsonLd={jsonLd}
+>
     <main
         class="mx-auto max-w-2xl px-6 py-8 pb-16 font-sans leading-relaxed text-ink"
     >

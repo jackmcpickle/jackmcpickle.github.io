@@ -22,7 +22,9 @@ export function initZoomableWindows(
     for (const w of windows) {
         const r = w.getBoundingClientRect();
         if (r.top < vh + TIMINGS.zoomViewportBufferPx) {
-            setTimeout(() => w.classList.add('open'), delay);
+            setTimeout(() => {
+                w.classList.add('open');
+            }, delay);
             delay += TIMINGS.zoomStaggerMs;
         }
     }

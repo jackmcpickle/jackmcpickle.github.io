@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Macintosh">
+  <rect width="32" height="32" rx="4" fill="#c8c8c4"/>
+  <!-- case -->
+  <rect x="5" y="4" width="22" height="22" rx="2" fill="#efefea" stroke="#1a1a1a" stroke-width="1.5"/>
+  <!-- screen -->
+  <rect x="8" y="7" width="16" height="11" fill="#fff" stroke="#1a1a1a" stroke-width="1"/>
+  <!-- happy face -->
+  <rect x="12" y="11" width="1.5" height="1.5" fill="#1a1a1a"/>
+  <rect x="18.5" y="11" width="1.5" height="1.5" fill="#1a1a1a"/>
+  <path d="M12 15.5 Q16 17.5 20 15.5" fill="none" stroke="#1a1a1a" stroke-width="1" stroke-linecap="square"/>
+  <!-- floppy slot -->
+  <rect x="10" y="21" width="12" height="1.5" fill="#1a1a1a"/>
+  <!-- power LED -->
+  <circle cx="24" cy="24" r="1.5" fill="#00ff9d"/>
+</svg>

@@ -24,15 +24,16 @@ export function formatTime(date: Date, use24h: boolean): string {
 
 export function initMenuClock(clock: HTMLElement | null): void {
     if (!clock) return;
+    const clockEl = clock;
 
     let clock24h = readStorage(localStorage, STORAGE_KEYS.clock24h) === '1';
 
     function tick(): void {
-        clock.textContent = formatTime(new Date(), clock24h);
-        clock.setAttribute('aria-label', clockLabel(clock24h));
+        clockEl.textContent = formatTime(new Date(), clock24h);
+        clockEl.setAttribute('aria-label', clockLabel(clock24h));
     }
 
-    clock.addEventListener('click', () => {
+    clockEl.addEventListener('click', () => {
         clock24h = !clock24h;
         writeStorage(
             localStorage,

@@ -33,6 +33,7 @@ export default defineConfig({
             },
         ],
         'typescript/strict-boolean-expressions': 'off',
+        'typescript/prefer-readonly-parameter-types': 'off',
         'typescript/explicit-module-boundary-types': [
             'warn',
             { allowArgumentsExplicitlyTypedAsAny: true },

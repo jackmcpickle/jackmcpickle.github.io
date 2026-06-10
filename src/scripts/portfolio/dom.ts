@@ -1,5 +1,5 @@
-export function getById<T extends HTMLElement>(id: string): T | null {
-    return document.getElementById(id) as T | null;
+export function getById(id: string): HTMLElement | null {
+    return document.getElementById(id);
 }
 
 export function queryAll<T extends Element>(selector: string): T[] {
