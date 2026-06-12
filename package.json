@@ -32,7 +32,7 @@
         "oxlint-tsgolint": "^0.23.0",
         "png-to-ico": "^3.0.1",
         "sharp": "^0.34.5",
-        "tailwindcss": "4.3.0",
+        "tailwindcss": "4.3.1",
         "wrangler": "^4.99.0"
     },
     "packageManager": "pnpm@11.5.1",
