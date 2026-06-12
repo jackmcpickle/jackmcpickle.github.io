@@ -4,23 +4,26 @@
 import sharp from 'sharp';
 import { writeFileSync } from 'node:fs';
 
-// --- 5x9 pixel font (baseline row 6, descenders rows 7-8) ---
+// --- proportional pixel font, 9 rows tall (x-height rows 2-6, baseline row 6,
+//     ascenders rows 0-1, descenders rows 7-8). Glyphs are left-aligned and
+//     trimmed to their own width so spacing is even. ---
 const G = {
     m: ['.....', '.....', '#####', '#.#.#', '#.#.#', '#.#.#', '#.#.#', '.....', '.....'],
-    c: ['.....', '.....', '.####', '#....', '#....', '#....', '.####', '.....', '.....'],
-    p: ['.....', '.....', '####.', '#...#', '#...#', '####.', '#....', '#....', '#....'],
-    i: ['..#..', '.....', '..#..', '..#..', '..#..', '..#..', '..#..', '.....', '.....'],
-    k: ['#....', '#....', '#..#.', '#.#..', '##...', '#.#..', '#..#.', '.....', '.....'],
-    l: ['..#..', '..#..', '..#..', '..#..', '..#..', '..#..', '..##.', '.....', '.....'],
-    e: ['.....', '.....', '.###.', '#...#', '#####', '#....', '.####', '.....', '.....'],
+    c: ['....', '....', '.###', '#...', '#...', '#...', '.###', '....', '....'],
+    p: ['....', '....', '###.', '#..#', '#..#', '###.', '#...', '#...', '#...'],
+    i: ['#', '.', '#', '#', '#', '#', '#', '.', '.'],
+    k: ['#...', '#...', '#..#', '#.#.', '##..', '#.#.', '#..#', '....', '....'],
+    l: ['#.', '#.', '#.', '#.', '#.', '#.', '##', '..', '..'],
+    e: ['....', '....', '.##.', '#..#', '####', '#...', '.###', '....', '....'],
 };
+const glyphW = (g) => Math.max(...g.map((r) => r.length));
 
 const WORD = 'mcpickle';
 const P = 3; // pixel scale for wordmark
-const GLYPH_W = 5,
-    GLYPH_H = 9,
-    GAP = 1;
-const textW = WORD.length * GLYPH_W * P + (WORD.length - 1) * GAP * P;
+const GLYPH_H = 9,
+    GAP = 1; // 1px inter-letter gap
+const advances = [...WORD].map((ch) => glyphW(G[ch]));
+const textW = (advances.reduce((a, w) => a + w, 0) + (WORD.length - 1) * GAP) * P;
 const textH = GLYPH_H * P;
 const INK = '#1a1a1a';
 
@@ -59,16 +62,17 @@ stripes.forEach((c, i) => {
 });
 
 let wordRects = '';
+let cursor = tx;
 [...WORD].forEach((ch, gi) => {
     const grid = G[ch];
-    const gx = tx + gi * (GLYPH_W + GAP) * P;
     grid.forEach((rowStr, r) => {
         [...rowStr].forEach((cell, col) => {
             if (cell === '#') {
-                wordRects += `<rect x="${gx + col * P}" y="${ty + r * P}" width="${P}" height="${P}"/>`;
+                wordRects += `<rect x="${cursor + col * P}" y="${ty + r * P}" width="${P}" height="${P}"/>`;
             }
         });
     });
+    cursor += (advances[gi] + GAP) * P;
 });
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="mcpickle" shape-rendering="crispEdges">
