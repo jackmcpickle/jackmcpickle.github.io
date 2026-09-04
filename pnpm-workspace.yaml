@@ -10,6 +10,7 @@ minimumReleaseAgeIgnoreMissingTime: false
 blockExoticSubdeps: true
 strictDepBuilds: true
 minimumReleaseAgeExclude:
-  - astro@6.4.5
+  # Renovate security update: astro@7.1.0
+  - astro@6.4.5 || 7.1.0
   - wrangler@4.99.0
   - miniflare@4.20260609.0
